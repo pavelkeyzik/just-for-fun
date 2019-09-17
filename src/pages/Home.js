@@ -11,7 +11,7 @@ import { Button } from '../components/Button';
 const poolingTimeMs = 2000;
 
 export function Home() {
-  const { data, loading, error, startPolling, stopPolling } = useQuery(
+  const { data, loading, error, startPolling, stopPolling, refetch } = useQuery(
     GET_STAFFS,
   );
   const [isPoolingEnabled, setIsPoolingEnabled] = useState(false);
@@ -24,6 +24,10 @@ export function Home() {
   function handleStopPooling() {
     setIsPoolingEnabled(false);
     stopPolling();
+  }
+
+  function handleRepeatQuery() {
+    refetch();
   }
 
   if (loading) {
@@ -45,6 +49,15 @@ export function Home() {
         <span style={{ marginLeft: 10 }}>
           (Will make request every {poolingTimeMs}ms)
         </span>
+      </div>
+      <div>
+        <b style={{ padding: 20 }}>Do you wanna make request manually?</b>
+        <Button>
+          <span role="img" aria-label="Plea emoji" style={{ marginRight: 10 }}>
+            🙏🏼
+          </span>
+          <span onClick={handleRepeatQuery}>Request data again</span>
+        </Button>
       </div>
       <hr />
       <div
