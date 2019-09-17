@@ -72,10 +72,13 @@ export function Home() {
           data.SiteStatistics.users &&
           data.SiteStatistics.users.edges &&
           data.SiteStatistics.users.edges.map(
-            edge =>
+            (edge, edgeIndex) =>
               edge &&
               edge.node && (
-                <div style={{ border: '2px solid', padding: 20 }}>
+                <div
+                  key={edgeIndex}
+                  style={{ border: '2px solid', padding: 20 }}
+                >
                   <div>Date: {edge.node.date}</div>
                   <b>Count: {edge.node.count}</b>
                 </div>
