@@ -1,0 +1,19 @@
+:root {
+  --button-background: white;
+  --button-background-hovered: #f4fdf9;
+}
+
+.Button {
+  padding: 5px 20px;
+  min-height: 40px;
+  border: 2px solid #bbb;
+  border-radius: 3px;
+  background: var(--button-background);
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.Button:hover {
+  border: 2px solid var(--primary);
+  background: var(--button-background-hovered);
+}

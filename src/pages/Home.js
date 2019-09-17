@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 
 import { Loader } from '../components/Loader';
+import { ErrorMessage } from '../components/ErrorMessage';
+import { PoolingStatus } from './home/PoolingStatus';
 
 import { GET_STAFFS } from '../utils/queries';
-import { ErrorMessage } from '../components/ErrorMessage';
+import { Button } from '../components/Button';
+
+const poolingTimeMs = 2000;
 
 export function Home() {
-  const { data, loading, error } = useQuery(GET_STAFFS);
+  const { data, loading, error, startPolling, stopPolling } = useQuery(
+    GET_STAFFS,
+  );
+  const [isPoolingEnabled, setIsPoolingEnabled] = useState(false);
+
+  function handleStartPooling() {
+    setIsPoolingEnabled(true);
+    startPolling(poolingTimeMs);
+  }
+
+  function handleStopPooling() {
+    setIsPoolingEnabled(false);
+    stopPolling();
+  }
 
   if (loading) {
     return <Loader />;
@@ -20,6 +37,16 @@ export function Home() {
   return (
     <div>
       <h2>Hello world</h2>
+      <hr />
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <PoolingStatus isPooling={isPoolingEnabled} />
+        <Button onClick={handleStartPooling}>Start pooling</Button>
+        <Button onClick={handleStopPooling}>Stop pooling</Button>
+        <span style={{ marginLeft: 10 }}>
+          (Will make request every {poolingTimeMs}ms)
+        </span>
+      </div>
+      <hr />
       <div
         style={{
           display: 'grid',

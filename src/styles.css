@@ -1,3 +1,7 @@
+:root {
+  --primary: #1fac73;
+}
+
 body {
   font-family: 'Courier New', Courier, monospace;
 }
