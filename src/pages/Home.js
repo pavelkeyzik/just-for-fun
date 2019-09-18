@@ -3,10 +3,12 @@ import { useQuery } from '@apollo/react-hooks';
 
 import { Loader } from '../components/Loader';
 import { ErrorMessage } from '../components/ErrorMessage';
+import { Button } from '../components/Button';
+
 import { PoolingStatus } from './home/PoolingStatus';
+import { Card } from './home/Card';
 
 import { GET_STAFFS } from '../utils/queries';
-import { Button } from '../components/Button';
 
 const poolingTimeMs = 2000;
 
@@ -75,13 +77,11 @@ export function Home() {
             (edge, edgeIndex) =>
               edge &&
               edge.node && (
-                <div
+                <Card
                   key={edgeIndex}
-                  style={{ border: '2px solid', padding: 20 }}
-                >
-                  <div>Date: {edge.node.date}</div>
-                  <b>Count: {edge.node.count}</b>
-                </div>
+                  date={edge.node.date}
+                  count={edge.node.count}
+                />
               ),
           )}
       </div>
