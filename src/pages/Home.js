@@ -70,20 +70,16 @@ export function Home() {
         }}
       >
         {data &&
-          data.SiteStatistics &&
-          data.SiteStatistics.users &&
-          data.SiteStatistics.users.edges &&
-          data.SiteStatistics.users.edges.map(
-            (edge, edgeIndex) =>
-              edge &&
-              edge.node && (
-                <Card
-                  key={edgeIndex}
-                  date={edge.node.date}
-                  count={edge.node.count}
-                />
-              ),
-          )}
+          data.places &&
+          data.places.map((place, placeIndex) => (
+            <Card
+              key={placeIndex}
+              title={place.title}
+              address={place.address}
+              lat={place.lat}
+              lng={place.lng}
+            />
+          ))}
       </div>
     </div>
   );
