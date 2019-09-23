@@ -6,6 +6,7 @@ import { ErrorMessage } from '../components/ErrorMessage';
 import { Button } from '../components/Button';
 
 import { PoolingStatus } from './home/PoolingStatus';
+import { AddPlaceForm } from './home/AddPlaceForm';
 import { Card } from './home/Card';
 
 import { GET_STAFFS } from '../utils/queries';
@@ -61,6 +62,8 @@ export function Home() {
           <span onClick={handleRepeatQuery}>Request data again</span>
         </Button>
       </div>
+      <hr />
+      <AddPlaceForm />
       <hr />
       <div
         style={{
