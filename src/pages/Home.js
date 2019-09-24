@@ -9,13 +9,13 @@ import { PoolingStatus } from './home/PoolingStatus';
 import { AddPlaceForm } from './home/AddPlaceForm';
 import { Card } from './home/Card';
 
-import { GET_STAFFS } from '../utils/queries';
+import { GET_PLACES } from '../utils/queries';
 
 const poolingTimeMs = 2000;
 
 export function Home() {
   const { data, loading, error, startPolling, stopPolling, refetch } = useQuery(
-    GET_STAFFS,
+    GET_PLACES,
   );
   const [isPoolingEnabled, setIsPoolingEnabled] = useState(false);
 
