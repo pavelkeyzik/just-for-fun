@@ -1,10 +1,12 @@
 import React from 'react';
+import { useMutation } from '@apollo/react-hooks';
 
 import { Button } from '../../components/Button';
 import { InputLabel } from '../../components/InputLabel';
 import { Input } from '../../components/Input';
 
 import { useAddPlaceForm } from '../../hooks/add-place-form';
+import { ADD_PLACE } from '../../utils/mutations';
 
 export function AddPlaceForm() {
   const {
@@ -17,9 +19,18 @@ export function AddPlaceForm() {
     setLatitude,
     setLongitude,
   } = useAddPlaceForm();
+  const [addNewPlace] = useMutation(ADD_PLACE);
 
   function handleAddNewPlace(event) {
     event.preventDefault();
+    addNewPlace({
+      variables: {
+        title: name,
+        address,
+        lat,
+        lng,
+      },
+    });
   }
 
   /**
@@ -49,7 +60,7 @@ export function AddPlaceForm() {
    */
   function handleChangeLatitude(event) {
     const value = event.currentTarget.value;
-    setLatitude(value);
+    setLatitude(+value);
   }
 
   /**
@@ -59,7 +70,7 @@ export function AddPlaceForm() {
    */
   function handleChangeLongitude(event) {
     const value = event.currentTarget.value;
-    setLongitude(value);
+    setLongitude(+value);
   }
 
   return (
