@@ -13,7 +13,7 @@ import { GET_PLACES } from '../utils/queries';
 
 const poolingTimeMs = 2000;
 
-export function Home() {
+export default function Home() {
   const { data, loading, error, startPolling, stopPolling, refetch } = useQuery(
     GET_PLACES,
   );

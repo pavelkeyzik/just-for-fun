@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export function Login() {
+export default function Login() {
   return (
     <div>
       <h2>Login form</h2>
-      <button>Click me</button>
+      <Link to="/">Click me</Link>
     </div>
   );
 }
