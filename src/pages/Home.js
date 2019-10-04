@@ -4,7 +4,6 @@ import { Container } from 'reactstrap';
 
 import { ErrorMessage } from '../components/ErrorMessage';
 
-import { PoolingStatus } from './home/PoolingStatus';
 import { AddPlaceForm } from './home/AddPlaceForm';
 import { Card } from './home/Card';
 
@@ -17,8 +16,7 @@ import { Terminal } from './home/Terminal';
 import { projectName } from '../config';
 
 import './Home.css';
-
-const poolingTimeMs = 2000;
+import { Footer } from '../components/Footer';
 
 export default function Home() {
   const { data, loading, error } = useQuery(GET_PLACES);
@@ -40,6 +38,7 @@ export default function Home() {
         <main className="Home__main">
           <h2>Welcome! You are in {projectName} project!</h2>
         </main>
+        <Footer />
       </Container>
       {/* <div style={{ display: 'flex', alignItems: 'center' }}>
         <PoolingStatus isPooling={isPoolingEnabled} />
