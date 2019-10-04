@@ -9,13 +9,14 @@ import {
 } from 'reactstrap';
 
 import { projectRepository, projectName } from '../../config';
+import './NavigationMenu.css';
 
 export function NavigationMenu() {
   return (
     <Container>
       <Navbar dark>
         <NavbarBrand>{projectName}</NavbarBrand>
-        <Nav navbar>
+        <Nav className="NavigationMenu__container">
           <NavItem>
             <NavLink href={projectRepository}>GitHub</NavLink>
           </NavItem>

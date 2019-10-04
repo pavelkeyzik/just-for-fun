@@ -1,7 +1,8 @@
 :root {
-  --primary: #1fac73;
   --text-foreground: #eee;
   --text-background: #111;
+  --link-foreground: #ddd;
+  --link-foreground-hover: #fff;
 }
 
 body {
