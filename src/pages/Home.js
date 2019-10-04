@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import { Button } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 import { ErrorMessage } from '../components/ErrorMessage';
 
@@ -13,27 +13,15 @@ import { PageLoader } from '../components/PageLoader';
 import { NavigationMenu } from './home/NavigationMenu';
 import { GradientLine } from './home/GradientLine';
 
+import { Terminal } from './home/Terminal';
+import { projectName } from '../config';
+
+import './Home.css';
+
 const poolingTimeMs = 2000;
 
 export default function Home() {
-  const { data, loading, error, startPolling, stopPolling, refetch } = useQuery(
-    GET_PLACES,
-  );
-  const [isPoolingEnabled, setIsPoolingEnabled] = useState(false);
-
-  function handleStartPooling() {
-    setIsPoolingEnabled(true);
-    startPolling(poolingTimeMs);
-  }
-
-  function handleStopPooling() {
-    setIsPoolingEnabled(false);
-    stopPolling();
-  }
-
-  function handleRepeatQuery() {
-    refetch();
-  }
+  const { data, loading, error } = useQuery(GET_PLACES);
 
   if (loading) {
     return <PageLoader message="Loading home page" />;
@@ -47,6 +35,12 @@ export default function Home() {
     <div>
       <NavigationMenu />
       <GradientLine />
+      <Container>
+        <Terminal />
+        <main className="Home__main">
+          <h2>Welcome! You are in {projectName} project!</h2>
+        </main>
+      </Container>
       {/* <div style={{ display: 'flex', alignItems: 'center' }}>
         <PoolingStatus isPooling={isPoolingEnabled} />
         <Button onClick={handleStartPooling}>Start pooling</Button>
@@ -65,7 +59,7 @@ export default function Home() {
         </Button>
       </div> */}
       {/* <AddPlaceForm /> */}
-      <hr />
+      {/* <hr />
       <div
         style={{
           display: 'grid',
@@ -84,7 +78,7 @@ export default function Home() {
               lng={place.lng}
             />
           ))}
-      </div>
+      </div> */}
     </div>
   );
 }

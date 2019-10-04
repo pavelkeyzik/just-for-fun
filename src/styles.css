@@ -10,3 +10,7 @@ body {
   color: var(--text-foreground);
   background: var(--text-background);
 }
+
+hr {
+  background: #333;
+}
