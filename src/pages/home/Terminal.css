@@ -1,0 +1,51 @@
+.Terminal {
+  background: #222;
+  margin: 40px 0 30px;
+}
+
+.Terminal-header {
+  display: flex;
+  padding: 10px 20px;
+  background: #191919;
+}
+
+.Terminal-buttons {
+  display: grid;
+  grid-gap: 6px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.Terminal-button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.Terminal-button_close {
+  background: #e45f65;
+}
+
+.Terminal-button_minimize {
+  background: #f0b23f;
+}
+
+.Terminal-button_fullscreen {
+  background: #31b941;
+}
+
+.Terminal-content {
+  padding: 20px 30px;
+  color: #ccc;
+}
+
+.Terminal-content code {
+  color: #ccc;
+}
+
+.Terminal-content code b {
+  color: #fff;
+}
+
+.Terminal-content_success {
+  color: #90ee90;
+}

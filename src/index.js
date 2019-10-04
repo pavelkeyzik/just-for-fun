@@ -5,7 +5,9 @@ import { ApolloProvider } from '@apollo/react-hooks';
 
 import { client } from './utils/api';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
+import { PageLoader } from './components/PageLoader';
 
 const Home = React.lazy(() => import('./pages/Home'));
 const Login = React.lazy(() => import('./pages/Login'));
@@ -13,7 +15,7 @@ const Login = React.lazy(() => import('./pages/Login'));
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Router>
-      <Suspense fallback={<div>Site is loading</div>}>
+      <Suspense fallback={<PageLoader message="Suspense work" />}>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />

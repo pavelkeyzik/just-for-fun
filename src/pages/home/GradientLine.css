@@ -1,0 +1,14 @@
+.GradientLine__container {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: #333
+    linear-gradient(
+      90deg,
+      #ff69b4 0%,
+      #ff69b4 20%,
+      #69b4ff 40%,
+      #69ffb4 60%,
+      #ffb469 80%
+    );
+}

@@ -1,7 +1,16 @@
 :root {
-  --primary: #1fac73;
+  --text-foreground: #eee;
+  --text-background: #111;
+  --link-foreground: #ddd;
+  --link-foreground-hover: #fff;
 }
 
 body {
   font-family: 'Courier New', Courier, monospace;
+  color: var(--text-foreground);
+  background: var(--text-background);
+}
+
+hr {
+  background: #333;
 }

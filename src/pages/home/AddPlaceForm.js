@@ -1,7 +1,7 @@
 import React from 'react';
 import { useMutation } from '@apollo/react-hooks';
+import { Button } from 'reactstrap';
 
-import { Button } from '../../components/Button';
 import { InputLabel } from '../../components/InputLabel';
 import { Input } from '../../components/Input';
 
