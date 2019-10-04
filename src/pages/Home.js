@@ -11,6 +11,7 @@ import { Card } from './home/Card';
 import { GET_PLACES } from '../utils/queries';
 import { PageLoader } from '../components/PageLoader';
 import { NavigationMenu } from './home/NavigationMenu';
+import { GradientLine } from './home/GradientLine';
 
 const poolingTimeMs = 2000;
 
@@ -45,8 +46,8 @@ export default function Home() {
   return (
     <div>
       <NavigationMenu />
-      <hr />
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <GradientLine />
+      {/* <div style={{ display: 'flex', alignItems: 'center' }}>
         <PoolingStatus isPooling={isPoolingEnabled} />
         <Button onClick={handleStartPooling}>Start pooling</Button>
         <Button onClick={handleStopPooling}>Stop pooling</Button>
@@ -62,9 +63,8 @@ export default function Home() {
           </span>
           <span onClick={handleRepeatQuery}>Request data again</span>
         </Button>
-      </div>
-      <hr />
-      <AddPlaceForm />
+      </div> */}
+      {/* <AddPlaceForm /> */}
       <hr />
       <div
         style={{
