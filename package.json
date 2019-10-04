@@ -7,12 +7,14 @@
     "apollo-cache-inmemory": "1.6.3",
     "apollo-client": "2.6.4",
     "apollo-link-http": "1.5.16",
+    "bootstrap": "4.3.1",
     "graphql": "14.5.4",
     "graphql-tag": "2.10.1",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "react-router-dom": "5.0.1",
-    "react-scripts": "3.1.1"
+    "react-scripts": "3.1.1",
+    "reactstrap": "8.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

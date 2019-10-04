@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
+import { Button } from 'reactstrap';
 
-import { Loader } from '../components/Loader';
 import { ErrorMessage } from '../components/ErrorMessage';
-import { Button } from '../components/Button';
 
 import { PoolingStatus } from './home/PoolingStatus';
 import { AddPlaceForm } from './home/AddPlaceForm';
 import { Card } from './home/Card';
 
 import { GET_PLACES } from '../utils/queries';
+import { PageLoader } from '../components/PageLoader';
+import { NavigationMenu } from './home/NavigationMenu';
 
 const poolingTimeMs = 2000;
 
@@ -34,7 +35,7 @@ export default function Home() {
   }
 
   if (loading) {
-    return <Loader />;
+    return <PageLoader message="Loading home page" />;
   }
 
   if (error) {
@@ -43,7 +44,7 @@ export default function Home() {
 
   return (
     <div>
-      <h2>Hello world</h2>
+      <NavigationMenu />
       <hr />
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <PoolingStatus isPooling={isPoolingEnabled} />
