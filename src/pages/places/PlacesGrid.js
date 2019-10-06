@@ -1,9 +1,10 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
-import { Row, Col } from 'reactstrap';
+import { Alert, Row, Col } from 'reactstrap';
 
 import { PlaceCard } from './placesGrid/PlaceCard.js';
+import { PageLoader } from '../../components/PageLoader';
 
 export const GET_PLACES = gql`
 	query getPlaces {
@@ -19,8 +20,12 @@ export const GET_PLACES = gql`
 export function PlacesGrid({ places }) {
 	const { data, error, loading } = useQuery(GET_PLACES);
 
+	if (error) {
+		return <Alert color="danger">{error.message}</Alert>
+	}
+
 	if (loading) {
-		return <div>Places is loading</div>
+		return <PageLoader message="Places is loading..." />;
 	}
 
 	return (

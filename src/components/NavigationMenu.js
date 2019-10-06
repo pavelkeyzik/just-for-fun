@@ -16,7 +16,7 @@ export function NavigationMenu() {
   return (
     <Container>
       <Navbar dark>
-        <NavbarBrand tag={Link} to="/">{projectName}</NavbarBrand>
+        <NavbarBrand tag={Link} to="/" aria-label="Home page">{projectName}</NavbarBrand>
         <Nav className="NavigationMenu__container">
           <NavItem>
             <NavLink href={projectRepository}>GitHub</NavLink>
