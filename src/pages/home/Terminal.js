@@ -12,7 +12,7 @@ export function Terminal() {
           <div className="Terminal-button Terminal-button_fullscreen" />
         </div>
       </div>
-      <div className="Terminal-content">
+      <div className="Terminal-content" aria-hidden="true">
         <code>
           <b>~root:</b> wget `React and GraphQL`
           <br />
