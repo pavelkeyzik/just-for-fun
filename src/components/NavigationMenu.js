@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Container,
   Navbar,
@@ -8,14 +9,14 @@ import {
   NavLink,
 } from 'reactstrap';
 
-import { projectRepository, projectName } from '../../config';
+import { projectRepository, projectName } from '../config';
 import './NavigationMenu.css';
 
 export function NavigationMenu() {
   return (
     <Container>
       <Navbar dark>
-        <NavbarBrand>{projectName}</NavbarBrand>
+        <NavbarBrand tag={Link} to="/">{projectName}</NavbarBrand>
         <Nav className="NavigationMenu__container">
           <NavItem>
             <NavLink href={projectRepository}>GitHub</NavLink>
