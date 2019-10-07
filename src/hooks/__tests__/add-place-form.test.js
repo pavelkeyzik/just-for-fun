@@ -46,4 +46,16 @@ describe('useAddPlaceForm hook', () => {
 
     expect(stateToCheck).toEqual(objectToCheck);
   });
+
+  test('check that latitude can be updated', () => {
+    const state = { lat: '' };
+    const action = { type: actions.SET_LATITUDE, payload: 5.5 };
+
+    const stateToCheck = reducer(state, action);
+    const objectToCheck = {
+      lat: 5.5,
+    };
+
+    expect(stateToCheck).toEqual(objectToCheck);
+  });
 });
