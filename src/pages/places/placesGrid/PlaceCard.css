@@ -1,12 +1,8 @@
 .PlaceCard__container {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .PlaceCard__card {
-	padding: 10px 20px;
-	background: #222;
+  padding: 10px 20px;
+  background: #222;
 }
-
-.PlaceCard__card-title {
-}
-
