@@ -25,11 +25,12 @@ describe('useAddPlaceForm hook', () => {
 
   test('check that name can be updated', () => {
     const state = { name: '' };
-    const action = { type: actions.SET_NAME, payload: 'New name' };
+    const newValue = 'New name';
+    const action = { type: actions.SET_NAME, payload: newValue };
 
     const stateToCheck = reducer(state, action);
     const objectToCheck = {
-      name: 'New name',
+      name: newValue,
     };
 
     expect(stateToCheck).toEqual(objectToCheck);
@@ -37,11 +38,12 @@ describe('useAddPlaceForm hook', () => {
 
   test('check that address can be updated', () => {
     const state = { address: '' };
-    const action = { type: actions.SET_ADDRESS, payload: 'New address' };
+    const newValue = 'New address';
+    const action = { type: actions.SET_ADDRESS, payload: newValue };
 
     const stateToCheck = reducer(state, action);
     const objectToCheck = {
-      address: 'New address',
+      address: newValue,
     };
 
     expect(stateToCheck).toEqual(objectToCheck);
@@ -49,11 +51,12 @@ describe('useAddPlaceForm hook', () => {
 
   test('check that latitude can be updated', () => {
     const state = { lat: '' };
-    const action = { type: actions.SET_LATITUDE, payload: 5.5 };
+    const newValue = 5.5;
+    const action = { type: actions.SET_LATITUDE, payload: newValue };
 
     const stateToCheck = reducer(state, action);
     const objectToCheck = {
-      lat: 5.5,
+      lat: newValue,
     };
 
     expect(stateToCheck).toEqual(objectToCheck);
@@ -61,11 +64,12 @@ describe('useAddPlaceForm hook', () => {
 
   test('check that longitude can be updated', () => {
     const state = { lng: '' };
-    const action = { type: actions.SET_LONGITUDE, payload: 5.5 };
+    const newValue = 5.5;
+    const action = { type: actions.SET_LONGITUDE, payload: newValue };
 
     const stateToCheck = reducer(state, action);
     const objectToCheck = {
-      lng: 5.5,
+      lng: newValue,
     };
 
     expect(stateToCheck).toEqual(objectToCheck);
