@@ -14,7 +14,7 @@ import { useReducer } from 'react';
  * @property {*} payload - Any data that you wanna send
  */
 
-const actions = {
+export const actions = {
   SET_NAME: 'SET_NAME',
   SET_ADDRESS: 'SET_ADDRESS',
   SET_LATITUDE: 'SET_LATITUDE',
@@ -26,7 +26,7 @@ const actions = {
  *
  * @type {AddPlaceForm}
  */
-const initialState = {
+export const initialState = {
   name: '',
   address: '',
   lat: 0.0,
