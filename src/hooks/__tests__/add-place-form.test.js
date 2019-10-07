@@ -58,4 +58,16 @@ describe('useAddPlaceForm hook', () => {
 
     expect(stateToCheck).toEqual(objectToCheck);
   });
+
+  test('check that longitude can be updated', () => {
+    const state = { lng: '' };
+    const action = { type: actions.SET_LONGITUDE, payload: 5.5 };
+
+    const stateToCheck = reducer(state, action);
+    const objectToCheck = {
+      lng: 5.5,
+    };
+
+    expect(stateToCheck).toEqual(objectToCheck);
+  });
 });
