@@ -34,4 +34,16 @@ describe('useAddPlaceForm hook', () => {
 
     expect(stateToCheck).toEqual(objectToCheck);
   });
+
+  test('check that address can be updated', () => {
+    const state = { address: '' };
+    const action = { type: actions.SET_ADDRESS, payload: 'New address' };
+
+    const stateToCheck = reducer(state, action);
+    const objectToCheck = {
+      address: 'New address',
+    };
+
+    expect(stateToCheck).toEqual(objectToCheck);
+  });
 });
