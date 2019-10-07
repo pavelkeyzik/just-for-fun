@@ -1,4 +1,4 @@
-import { actions, initialState } from '../add-place-form';
+import { actions, initialState, reducer } from '../add-place-form';
 
 describe('useAddPlaceForm hook', () => {
   test('check actions', () => {
@@ -21,5 +21,17 @@ describe('useAddPlaceForm hook', () => {
     };
 
     expect(initialState).toEqual(objectToCheck);
+  });
+
+  test('check that name can be updated', () => {
+    const state = { name: '' };
+    const action = { type: actions.SET_NAME, payload: 'New name' };
+
+    const stateToCheck = reducer(state, action);
+    const objectToCheck = {
+      name: 'New name',
+    };
+
+    expect(stateToCheck).toEqual(objectToCheck);
   });
 });

@@ -40,7 +40,7 @@ export const initialState = {
  *
  * @returns {AddPlaceForm}
  */
-function reducer(state, action) {
+export function reducer(state, action) {
   switch (action.type) {
     case actions.SET_NAME:
       return {
