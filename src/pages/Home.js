@@ -26,8 +26,8 @@ export default function Home() {
           to="/places"
           color="primary"
           outline
-          block
           aria-label="View places"
+          className="Home__button-fluid"
         >
           View places
         </Button>

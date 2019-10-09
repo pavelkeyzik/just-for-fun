@@ -1,3 +1,13 @@
 .Home__main {
   margin: 60px 0 40px;
 }
+
+.Home__button-fluid {
+  width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+  .Home__button-fluid {
+    width: unset;
+  }
+}

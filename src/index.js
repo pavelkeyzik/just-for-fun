@@ -20,17 +20,17 @@ const Places = React.lazy(() => import('./pages/Places'));
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Router>
-			<NavigationMenu />
-			<GradientLine />
-			<Container>
-				<Suspense fallback={<PageLoader message="Suspense work" />}>
-					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route exact path="/places" component={Places} />
-					</Switch>
-				</Suspense>
-				<Footer />
-			</Container>
+      <NavigationMenu />
+      <GradientLine />
+      <Container>
+        <Suspense fallback={<PageLoader message="Suspense work" />}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/places" component={Places} />
+          </Switch>
+        </Suspense>
+        <Footer />
+      </Container>
     </Router>
   </ApolloProvider>,
   document.getElementById('root'),
