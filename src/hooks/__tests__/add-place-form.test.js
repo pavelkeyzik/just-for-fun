@@ -1,4 +1,20 @@
-import { actions, initialState, reducer } from '../add-place-form';
+import React from 'react';
+import { mount } from 'enzyme';
+import {
+  actions,
+  initialState,
+  reducer,
+  useAddPlaceForm,
+} from '../add-place-form';
+
+function TestHook({ callback }) {
+  callback();
+  return null;
+}
+
+function testHook(callback) {
+  mount(<TestHook callback={callback} />);
+}
 
 describe('useAddPlaceForm hook', () => {
   test('check actions', () => {
@@ -73,5 +89,21 @@ describe('useAddPlaceForm hook', () => {
     };
 
     expect(stateToCheck).toEqual(objectToCheck);
+  });
+
+  test('check object that returned from hook by default', () => {
+    let stateToCheck = null;
+    const objectToCheck = {
+      name: '',
+      address: '',
+      lat: 0.0,
+      lng: 0.0,
+    };
+
+    testHook(() => {
+      stateToCheck = useAddPlaceForm();
+    });
+
+    expect(stateToCheck).toMatchObject(objectToCheck);
   });
 });

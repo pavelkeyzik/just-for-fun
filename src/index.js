@@ -11,6 +11,8 @@ import { NavigationMenu } from './components/NavigationMenu';
 import { GradientLine } from './components/GradientLine';
 import { Footer } from './components/Footer';
 
+import './setup';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
