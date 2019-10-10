@@ -106,4 +106,39 @@ describe('useAddPlaceForm hook', () => {
 
     expect(stateToCheck).toMatchObject(objectToCheck);
   });
+
+  test('check object that returned from initialized by default hook', () => {
+    let stateToCheck = null;
+    const objectToCheck = {
+      name: 'asd',
+      address: '12',
+      lat: 3,
+      lng: 2,
+    };
+
+    testHook(() => {
+      stateToCheck = useAddPlaceForm(objectToCheck);
+    });
+
+    expect(stateToCheck).toMatchObject(objectToCheck);
+  });
+
+  test('check that if we add the only "name" in hook then other fields completed by default', () => {
+    let stateToCheck = null;
+    const defaultState = {
+      name: 'asd',
+    };
+    const objectToCheck = {
+      name: 'asd',
+      address: '',
+      lat: 0.0,
+      lng: 0.0,
+    };
+
+    testHook(() => {
+      stateToCheck = useAddPlaceForm(defaultState);
+    });
+
+    expect(stateToCheck).toMatchObject(objectToCheck);
+  });
 });
