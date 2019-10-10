@@ -72,8 +72,11 @@ export function reducer(state, action) {
  *
  * @param {AddPlaceForm} data - Information about place
  */
-export function useAddPlaceForm() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+export function useAddPlaceForm(defaultState = {}) {
+  const [state, dispatch] = useReducer(reducer, {
+    ...initialState,
+    ...defaultState,
+  });
 
   /**
    * Function that dispatch action to change place name
