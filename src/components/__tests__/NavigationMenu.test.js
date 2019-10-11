@@ -8,6 +8,11 @@ jest.mock('../../config', () => {
   return {
     projectName: 'PROJECT_NAME',
     projectRepository: 'PROJECT_LINK',
+    routes: {
+      home: '/',
+      places: '/places',
+      contributors: '/contributors',
+    },
   };
 });
 

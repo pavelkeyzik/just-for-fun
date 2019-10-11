@@ -9,17 +9,22 @@ import {
   NavLink,
 } from 'reactstrap';
 
-import { projectRepository, projectName } from '../config';
+import { projectRepository, projectName, routes } from '../config';
 import './NavigationMenu.css';
 
 export function NavigationMenu() {
   return (
     <Container>
       <Navbar dark>
-        <NavbarBrand tag={Link} to="/" aria-label="Home page">
+        <NavbarBrand tag={Link} to={routes.home} aria-label="Home page">
           {projectName}
         </NavbarBrand>
         <Nav className="NavigationMenu__container">
+          <NavItem>
+            <NavLink tag={Link} to={routes.contributors}>
+              Contributors
+            </NavLink>
+          </NavItem>
           <NavItem>
             <NavLink href={projectRepository}>GitHub</NavLink>
           </NavItem>

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { Container } from 'reactstrap';
 
+import { routes } from './config';
 import { client } from './utils/api';
 
 import { PageLoader } from './components/PageLoader';
@@ -26,9 +27,9 @@ ReactDOM.render(
       <Container>
         <Suspense fallback={<PageLoader message="Suspense work" />}>
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/places" component={Places} />
-            <Route exact path="/contributors" component={Contributors} />
+            <Route exact path={routes.home} component={Home} />
+            <Route exact path={routes.places} component={Places} />
+            <Route exact path={routes.component} component={Contributors} />
           </Switch>
         </Suspense>
         <Footer />
