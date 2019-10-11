@@ -3,7 +3,7 @@ import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 import { Terminal } from './home/Terminal';
-import { projectName, projectName_Accessible } from '../config';
+import { projectName, projectName_Accessible, routes } from '../config';
 
 import './Home.css';
 
@@ -23,7 +23,7 @@ export default function Home() {
         </p>
         <Button
           tag={Link}
-          to="/places"
+          to={routes.places}
           color="primary"
           outline
           aria-label="View places"
