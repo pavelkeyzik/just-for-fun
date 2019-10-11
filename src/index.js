@@ -16,6 +16,7 @@ import './styles.css';
 
 const Home = React.lazy(() => import('./pages/Home'));
 const Places = React.lazy(() => import('./pages/Places'));
+const Contributors = React.lazy(() => import('./pages/Contributors'))
 
 ReactDOM.render(
   <ApolloProvider client={client}>
@@ -27,6 +28,7 @@ ReactDOM.render(
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/places" component={Places} />
+            <Route exact path="/contributors" component={Contributors} />
           </Switch>
         </Suspense>
         <Footer />
