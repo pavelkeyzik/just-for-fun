@@ -31,6 +31,16 @@ export default function Home() {
         >
           View places
         </Button>
+        <Button
+          tag={Link}
+          to="/contributors"
+          color="primary"
+          outline
+          aria-label="View contributors"
+          className="Home__button-fluid"
+        >
+          View contributors
+        </Button>
       </main>
     </div>
   );
