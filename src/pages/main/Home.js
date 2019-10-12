@@ -1,13 +1,13 @@
 import React from 'react';
 import { Button } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import { Terminal } from './home/Terminal';
-import { projectName, projectName_Accessible, routes } from '../config';
+import { projectName, projectName_Accessible, routes } from '../../config';
 
 import './Home.css';
 
-export default function Home() {
+function Home() {
   return (
     <div>
       <Terminal />
@@ -35,3 +35,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default withRouter(Home);

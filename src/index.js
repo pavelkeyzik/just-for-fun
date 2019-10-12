@@ -2,38 +2,27 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { Container } from 'reactstrap';
 
 import { routes } from './config';
 import { client } from './utils/api';
 
-import { PageLoader } from './components/PageLoader';
-import { NavigationMenu } from './components/NavigationMenu';
-import { GradientLine } from './components/GradientLine';
-import { Footer } from './components/Footer';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
-const Home = React.lazy(() => import('./pages/Home'));
-const Places = React.lazy(() => import('./pages/Places'));
-const Contributors = React.lazy(() => import('./pages/Contributors'));
+import { PageLoader } from './components/PageLoader';
+
+const Main = React.lazy(() => import('./pages/Main'));
+const Admin = React.lazy(() => import('./pages/Admin'));
 
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Router>
-      <NavigationMenu />
-      <GradientLine />
-      <Container>
-        <Suspense fallback={<PageLoader message="Suspense work" />}>
-          <Switch>
-            <Route exact path={routes.home} component={Home} />
-            <Route exact path={routes.places} component={Places} />
-            <Route exact path={routes.component} component={Contributors} />
-          </Switch>
-        </Suspense>
-        <Footer />
-      </Container>
+      <Suspense fallback={<PageLoader message="Suspense work" />}>
+        <Switch>
+          <Route path={routes.admin} component={Admin} />
+          <Route path={routes.home} component={Main} />
+				</Switch>
+      </Suspense>
     </Router>
   </ApolloProvider>,
   document.getElementById('root'),

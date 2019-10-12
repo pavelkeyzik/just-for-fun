@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 import { Alert, Row, Col } from 'reactstrap';
 
 import { PlaceCard } from './placesGrid/PlaceCard.js';
-import { PageLoader } from '../../components/PageLoader';
+import { PageLoader } from '../../../components/PageLoader';
 
 export const GET_PLACES = gql`
   query getPlaces {
