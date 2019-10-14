@@ -1,11 +1,9 @@
 import React from 'react';
 
+import Login from './admin/Login';
+
 function Admin() {
-	return (
-		<div>
-			<h2>Hi! This page is just for admin. Please, leave it if you are not.</h2>
-		</div>
-	);
+  return <Login />;
 }
 
 export default Admin;

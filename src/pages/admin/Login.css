@@ -1,0 +1,10 @@
+.Login__card {
+  background-color: #222;
+  border-color: #222;
+}
+
+.Login__row {
+  padding-top: 60px;
+  justify-content: center;
+  align-items: center;
+}
