@@ -25,7 +25,7 @@ export function ContributorsTable() {
         </tr>
         <tr>
           <th scope="row">2</th>
-          <td>Hritik Kumar </td>
+          <td>Eagle732</td>
           <td>
             {' '}
             <a href="https://github.com/Eagle732">
