@@ -12,5 +12,6 @@ export const routes = {
   home: '/',
   places: '/places',
   contributors: '/contributors',
-	admin: '/admin',
+  admin: '/admin',
+  dashboard: '/admin/dashboard',
 };

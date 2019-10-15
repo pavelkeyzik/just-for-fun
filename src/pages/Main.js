@@ -14,20 +14,20 @@ const Places = React.lazy(() => import('./main/Places'));
 const Contributors = React.lazy(() => import('./main/Contributors'));
 
 function Main() {
-	return (
-		<div>
-			<NavigationMenu />
-			<GradientLine />
-			<Container>
-				<Suspense fallback={<PageLoader message="Suspense work" />}>
-					<Route exact path={routes.home} component={Home} />
-					<Route exact path={routes.places} component={Places} />
-					<Route path={routes.contributors} component={Contributors} />
-				</Suspense>
-			<Footer />
-			</Container>
-		</div>
-	);
+  return (
+    <div>
+      <NavigationMenu />
+      <GradientLine />
+      <Container>
+        <Suspense fallback={<PageLoader message="Suspense work" />}>
+          <Route exact path={routes.home} component={Home} />
+          <Route exact path={routes.places} component={Places} />
+          <Route exact path={routes.contributors} component={Contributors} />
+        </Suspense>
+        <Footer />
+      </Container>
+    </div>
+  );
 }
 
 export default Main;
