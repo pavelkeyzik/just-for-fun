@@ -34,7 +34,7 @@ export function PlacesGrid({ places }) {
         {data &&
           data.places &&
           data.places.map((place, index) => (
-            <Col key={index} sm={{ size: 'auto' }}>
+            <Col key={index} sm={{ size: '6' }}>
               <PlaceCard key={index} information={place} />
             </Col>
           ))}
