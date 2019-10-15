@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { Container } from 'reactstrap';
 
 import { routes } from '../config';
@@ -12,6 +12,7 @@ import { Footer } from '../components/Footer';
 const Home = React.lazy(() => import('./main/Home'));
 const Places = React.lazy(() => import('./main/Places'));
 const Contributors = React.lazy(() => import('./main/Contributors'));
+const NotFound = React.lazy(() => import('./main/NotFound'));
 
 function Main() {
   return (
@@ -20,9 +21,12 @@ function Main() {
       <GradientLine />
       <Container>
         <Suspense fallback={<PageLoader message="Suspense work" />}>
-          <Route exact path={routes.home} component={Home} />
-          <Route exact path={routes.places} component={Places} />
-          <Route exact path={routes.contributors} component={Contributors} />
+          <Switch>
+            <Route exact path={routes.home} component={Home} />
+            <Route exact path={routes.places} component={Places} />
+            <Route exact path={routes.contributors} component={Contributors} />
+            <Route component={NotFound} />
+          </Switch>
         </Suspense>
         <Footer />
       </Container>
