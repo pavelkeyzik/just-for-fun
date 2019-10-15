@@ -1,10 +1,13 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { withRouter } from 'react-router-dom';
+import { routes } from '../../../config';
 
-function LoginForm() {
-  const handleSubmit = event => {
+function LoginForm({ history }) {
+  function handleSubmit(event) {
     event.preventDefault();
-  };
+    history.push(routes.dashboard);
+  }
 
   return (
     <Form onSubmit={handleSubmit}>
@@ -21,4 +24,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
