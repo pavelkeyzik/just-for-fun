@@ -34,6 +34,17 @@ export function ContributorsTable() {
             </a>
           </td>
         </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>arturoalviar</td>
+          <td>
+            {' '}
+            <a href="https://github.com/arturoalviar">
+              {' '}
+              https://github.com/arturoalviar
+            </a>
+          </td>
+        </tr>
       </tbody>
     </Table>
   );
