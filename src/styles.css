@@ -3,6 +3,8 @@
   --text-background: #111;
   --link-foreground: #ddd;
   --link-foreground-hover: #fff;
+  --pink: #f91145;
+  --pink-hovered: #b9052d;
 }
 
 body {
@@ -13,4 +15,13 @@ body {
 
 hr {
   background: #333;
+}
+
+a {
+  color: var(--pink);
+  font-weight: bold;
+}
+
+a:hover {
+  color: var(--pink-hovered);
 }
