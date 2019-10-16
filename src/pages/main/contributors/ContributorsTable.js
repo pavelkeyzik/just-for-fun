@@ -7,9 +7,11 @@ export function ContributorsTable() {
   return (
     <Table className="ContributorsTable__table">
       <thead>
-        <th>#</th>
-        <th>Username</th>
-        <th>GitHub</th>
+        <tr>
+          <th>#</th>
+          <th>Username</th>
+          <th>GitHub</th>
+        </tr>
       </thead>
       <tbody>
         <tr>
