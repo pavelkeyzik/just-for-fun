@@ -66,6 +66,14 @@ export function ContributorsTable() {
             <a href="https://github.com/fllprbt"> https://github.com/fllprbt</a>
           </td>
         </tr>
+        <tr>
+          <th scope="row">6</th>
+          <td>xit4</td>
+          <td>
+            {' '}
+            <a href="https://github.com/xit4"> https://github.com/xit4</a>
+          </td>
+        </tr>
       </tbody>
     </Table>
   );
