@@ -1,0 +1,7 @@
+.ActionsPanel__container {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 30px;
+  border-bottom: 1px solid #222;
+}

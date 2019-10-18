@@ -1,47 +1,45 @@
 import React, { Suspense } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
-import { Container, Row, Col, Nav, NavItem, NavLink } from 'reactstrap';
+import { Route, Switch } from 'react-router-dom';
+import { Container, Row, Col } from 'reactstrap';
 
-import { Header } from './components/Header';
 import { PageLoader } from '../../components/PageLoader';
+import { NavMenu } from './components/NavMenu';
+
+import './Dashboard.css';
+
 import { routes } from '../../config';
+import { SideBar } from './components/SideBar';
+import { ActionsPanel } from './components/ActionsPanel';
 
 function Dashboard() {
   return (
     <Container fluid>
-      <Row>
-        <Col>
-          <Header />
+      <Row className="Dashboard__container">
+        <Col xl="2" className="Dashboard__column">
+          <NavMenu />
         </Col>
-      </Row>
-      <Row>
-        <Col sm="4" xl="2">
-          <Nav>
-            <NavItem>
-              <NavLink tag={Link} to={routes.admin.home}>
-                Dashboard
-              </NavLink>
-              <NavLink tag={Link} to={routes.admin.places}>
-                Places
-              </NavLink>
-            </NavItem>
-          </Nav>
+        <Col xl="7" className="Dashboard__column">
+          <ActionsPanel />
+          <main className="Dashboard__main">
+            <Suspense fallback={<PageLoader message="Content is loading" />}>
+              <Switch>
+                <Route
+                  exact
+                  path={routes.admin.home}
+                  component={() => <div>Dashboard content</div>}
+                />
+                <Route
+                  exact
+                  path={routes.admin.places}
+                  component={() => <div>Places content</div>}
+                />
+                <Route component={() => <div>Nothing found here</div>} />
+              </Switch>
+            </Suspense>
+          </main>
         </Col>
-        <Col sm="8" xl="10">
-          <Suspense fallback={<PageLoader message="Content is loading" />}>
-            <Switch>
-              <Route
-                exact
-                path={routes.admin.home}
-                component={() => <div>Dashboard content</div>}
-              />
-              <Route
-                exact
-                path={routes.admin.places}
-                component={() => <div>Places content</div>}
-              />
-            </Switch>
-          </Suspense>
+        <Col xl="3" className="Dashboard__column">
+          <SideBar />
         </Col>
       </Row>
     </Container>

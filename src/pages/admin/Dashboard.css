@@ -1,0 +1,11 @@
+.Dashboard__container {
+  min-height: 100vh;
+}
+
+.Dashboard__column {
+  padding: 0;
+}
+
+.Dashboard__main {
+  padding: 30px;
+}
