@@ -20,7 +20,7 @@ function Main() {
       <NavigationMenu />
       <GradientLine />
       <Container>
-        <Suspense fallback={<PageLoader message="Suspense work" />}>
+        <Suspense fallback={<PageLoader message="Main page is loading..." />}>
           <Switch>
             <Route exact path={routes.home} component={Home} />
             <Route exact path={routes.places} component={Places} />

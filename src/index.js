@@ -17,7 +17,7 @@ const Admin = React.lazy(() => import('./pages/Admin'));
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Router>
-      <Suspense fallback={<PageLoader message="Suspense work" />}>
+      <Suspense fallback={<PageLoader message="Site is loading..." />}>
         <Switch>
           <Route path={routes.admin.home} component={Admin} />
           <Route path={routes.home} component={Main} />

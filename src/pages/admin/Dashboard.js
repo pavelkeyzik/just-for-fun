@@ -28,7 +28,7 @@ function Dashboard() {
           </Nav>
         </Col>
         <Col sm="8" xl="10">
-          <Suspense fallback={<PageLoader message="SUSPERSNSESSEES" />}>
+          <Suspense fallback={<PageLoader message="Content is loading" />}>
             <Switch>
               <Route
                 exact

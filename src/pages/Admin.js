@@ -12,7 +12,7 @@ function Admin() {
   const isAuthorized = localStorage.getItem('isAuthorized');
 
   return (
-    <Suspense fallback={<PageLoader message="Suspense work 2222" />}>
+    <Suspense fallback={<PageLoader message="Admin panel is loading..." />}>
       {!isAuthorized && <Redirect to={routes.admin.login} />}
       <Switch>
         <Route exact path={routes.admin.login} component={Login} />
