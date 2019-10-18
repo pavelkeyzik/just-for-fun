@@ -12,6 +12,9 @@ export const routes = {
   home: '/',
   places: '/places',
   contributors: '/contributors',
-  admin: '/admin',
-  dashboard: '/admin/dashboard',
+  admin: {
+    home: '/admin',
+    login: '/admin/login',
+    places: '/admin/places',
+  },
 };

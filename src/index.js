@@ -19,9 +19,9 @@ ReactDOM.render(
     <Router>
       <Suspense fallback={<PageLoader message="Suspense work" />}>
         <Switch>
-          <Route path={routes.admin} component={Admin} />
+          <Route path={routes.admin.home} component={Admin} />
           <Route path={routes.home} component={Main} />
-				</Switch>
+        </Switch>
       </Suspense>
     </Router>
   </ApolloProvider>,

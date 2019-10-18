@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import { routes } from '../config';
 
@@ -9,10 +9,15 @@ const Login = React.lazy(() => import('./admin/Login'));
 const Dashboard = React.lazy(() => import('./admin/Dashboard'));
 
 function Admin() {
+  const isAuthorized = localStorage.getItem('isAuthorized');
+
   return (
-    <Suspense fallback={<PageLoader message="Suspense work" />}>
-      <Route exact path={routes.admin} component={Login} />
-      <Route exact path={routes.dashboard} component={Dashboard} />
+    <Suspense fallback={<PageLoader message="Suspense work 2222" />}>
+      {!isAuthorized && <Redirect to={routes.admin.login} />}
+      <Switch>
+        <Route exact path={routes.admin.login} component={Login} />
+        <Route path={routes.admin.home} component={Dashboard} />
+      </Switch>
     </Suspense>
   );
 }

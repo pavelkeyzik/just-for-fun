@@ -1,4 +1,10 @@
-import { routes, apiBase, projectRepository, projectName, projectName_Accessible } from '../config'; 
+import {
+  routes,
+  apiBase,
+  projectRepository,
+  projectName,
+  projectName_Accessible,
+} from '../config';
 
 describe('Configuration file', () => {
   test('check routes object', () => {
@@ -6,8 +12,11 @@ describe('Configuration file', () => {
       home: '/',
       places: '/places',
       contributors: '/contributors',
-      admin: '/admin',
-      dashboard: '/admin/dashboard',
+      admin: {
+        home: '/admin',
+        login: '/admin/login',
+        places: '/admin/places',
+      },
     };
 
     expect(routes).toEqual(objectToCheck);
@@ -18,7 +27,9 @@ describe('Configuration file', () => {
   });
 
   test('check project repository url', () => {
-    expect(projectRepository).toEqual('https://github.com/pavelkeyzik/just-for-fun');
+    expect(projectRepository).toEqual(
+      'https://github.com/pavelkeyzik/just-for-fun',
+    );
   });
 
   test('check project name', () => {

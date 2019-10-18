@@ -6,7 +6,8 @@ import { routes } from '../../../config';
 function LoginForm({ history }) {
   function handleSubmit(event) {
     event.preventDefault();
-    history.push(routes.dashboard);
+    localStorage.setItem('isAuthorized', true);
+    history.push(routes.admin.home);
   }
 
   return (
