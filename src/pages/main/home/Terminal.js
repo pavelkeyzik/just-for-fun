@@ -18,9 +18,9 @@ export function Terminal() {
           <br />
           <b>~root:</b> node little-bit-fun.js
           <br />
-          Fun started{' '}
-          <span className="Terminal-content_success">succesfully</span> on your
-          heart's port...
+          {`Fun started ${(
+            <span className="Terminal-content_success">succesfully</span>
+          )} on your heart's port...`}
         </code>
       </div>
     </div>
