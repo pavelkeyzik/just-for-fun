@@ -16,11 +16,9 @@ export function ContributorsTable() {
       <tbody>
         <tr>
           <th scope="row">1</th>
-          <td>pavelkeyzik </td>
+          <td>pavelkeyzik</td>
           <td>
-            {' '}
             <a href="https://github.com/pavelkeyzik">
-              {' '}
               https://github.com/pavelkeyzik
             </a>
           </td>
@@ -29,9 +27,7 @@ export function ContributorsTable() {
           <th scope="row">2</th>
           <td>Eagle732</td>
           <td>
-            {' '}
             <a href="https://github.com/Eagle732">
-              {' '}
               https://github.com/Eagle732
             </a>
           </td>
@@ -40,9 +36,7 @@ export function ContributorsTable() {
           <th scope="row">3</th>
           <td>arturoalviar</td>
           <td>
-            {' '}
             <a href="https://github.com/arturoalviar">
-              {' '}
               https://github.com/arturoalviar
             </a>
           </td>
@@ -51,9 +45,7 @@ export function ContributorsTable() {
           <th scope="row">4</th>
           <td>albertmolodec</td>
           <td>
-            {' '}
             <a href="https://github.com/albertmolodec">
-              {' '}
               https://github.com/albertmolodec
             </a>
           </td>
@@ -62,24 +54,21 @@ export function ContributorsTable() {
           <th scope="row">5</th>
           <td>fllprbt</td>
           <td>
-            {' '}
-            <a href="https://github.com/fllprbt"> https://github.com/fllprbt</a>
+            <a href="https://github.com/fllprbt">https://github.com/fllprbt</a>
           </td>
         </tr>
         <tr>
           <th scope="row">6</th>
           <td>xit4</td>
           <td>
-            {' '}
-            <a href="https://github.com/xit4"> https://github.com/xit4</a>
+            <a href="https://github.com/xit4">https://github.com/xit4</a>
           </td>
         </tr>
         <tr>
           <th scope="row">7</th>
           <td>MAYTESI</td>
           <td>
-            {' '}
-            <a href="https://github.com/MAYTESI"> https://github.com/MAYTESI</a>
+            <a href="https://github.com/MAYTESI">https://github.com/MAYTESI</a>
           </td>
         </tr>
       </tbody>
