@@ -10,6 +10,7 @@ import './Dashboard.css';
 import { routes } from '../../config';
 import { SideBar } from './components/SideBar';
 import { ActionsPanel } from './components/ActionsPanel';
+import { Places } from './Places';
 
 function Dashboard() {
   return (
@@ -28,11 +29,7 @@ function Dashboard() {
                   path={routes.admin.home}
                   component={() => <div>Dashboard content</div>}
                 />
-                <Route
-                  exact
-                  path={routes.admin.places}
-                  component={() => <div>Places content</div>}
-                />
+                <Route exact path={routes.admin.places} component={Places} />
                 <Route component={() => <div>Nothing found here</div>} />
               </Switch>
             </Suspense>

@@ -1,0 +1,16 @@
+.Button {
+  display: flex;
+  height: 45px;
+  padding: 0 30px;
+  border: none;
+  background: none;
+  color: #eee;
+  border: 2px solid #eee;
+  transition: 0.2s;
+}
+
+.Button:hover,
+.Button:focus {
+  color: var(--pink);
+  border: 2px solid var(--pink);
+}
