@@ -4,13 +4,15 @@ import { Container, Row, Col } from 'reactstrap';
 
 import { PageLoader } from '../../components/PageLoader';
 import { NavMenu } from './components/NavMenu';
+import { SideBar } from './components/SideBar';
+import { ActionsPanel } from './components/ActionsPanel';
 
 import './Dashboard.css';
 
 import { routes } from '../../config';
-import { SideBar } from './components/SideBar';
-import { ActionsPanel } from './components/ActionsPanel';
+
 import { Places } from './Places';
+import CreateNewPlace from './CreateNewPlace';
 
 function Dashboard() {
   return (
@@ -30,6 +32,11 @@ function Dashboard() {
                   component={() => <div>Dashboard content</div>}
                 />
                 <Route exact path={routes.admin.places} component={Places} />
+                <Route
+                  exact
+                  path={routes.admin.createNewPlace}
+                  component={CreateNewPlace}
+                />
                 <Route component={() => <div>Nothing found here</div>} />
               </Switch>
             </Suspense>

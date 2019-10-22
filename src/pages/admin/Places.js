@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
-import { Button } from './components/Button';
+import { routes } from '../../config';
 
 import './Places.css';
 import { PageLoader } from '../../components/PageLoader';
@@ -16,20 +17,18 @@ export const GET_PLACES = gql`
   }
 `;
 
-export function Places() {
+export function Places({ history }) {
   const { data, loading } = useQuery(GET_PLACES);
 
   if (loading) {
     return <PageLoader message="Places is loading" />;
   }
 
-  console.log({ data });
-
   return (
     <React.Fragment>
       <div className="Page__short-info">
         <h2>Places</h2>
-        <Button>Create new place</Button>
+        <Link to={routes.admin.createNewPlace}>Create new place</Link>
       </div>
       <section className="Admin__places-grid">
         {data.places.map((place, index) => (
