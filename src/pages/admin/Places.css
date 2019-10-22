@@ -1,0 +1,26 @@
+.Page__short-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.Admin__places-grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.Admin__place-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 30px;
+  border-radius: 4px;
+  background: #222;
+  box-shadow: 0 3px 25px rgb(0, 0, 0, 0.3);
+}
+
+.Admin__place-card-title {
+  font-weight: bold;
+}
