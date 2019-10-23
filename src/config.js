@@ -21,3 +21,6 @@ export const routes = {
     createNewPlace: '/admin/create-new-place',
   },
 };
+
+export const defaultMarkerLat = 53.888019427799776;
+export const defaultMarkerLng = 27.544588765497792;

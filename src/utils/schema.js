@@ -1,5 +1,13 @@
 import { placesData } from './__mocks__/places';
 
+async function mockedData(data, time = 400) {
+  return await new Promise(res => {
+    setTimeout(() => {
+      res(data);
+    }, time);
+  });
+}
+
 export const schema = `
   type Place {
     _id: ID!
@@ -27,9 +35,9 @@ export const schema = `
 
 export const resolvers = {
   Query: {
-    places: () => placesData,
+    places: async () => await mockedData(placesData),
   },
   Mutation: {
-    newPlace: () => placesData[0],
+    newPlace: async () => await mockedData(placesData[0]),
   },
 };
