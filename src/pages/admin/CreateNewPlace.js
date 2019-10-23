@@ -92,13 +92,15 @@ function CreateNewPlace() {
             onChange={handleChangePlaceName}
             type="text"
             placeholder="Enter name of new place"
+            required
           />
           <label>Place address</label>
           <Input
             value={address}
             onChange={handleChangePlaceAddress}
             type="text"
-            placeholder="Enter name of new place"
+            placeholder="Enter address of new place"
+            required
           />
           <Button type="submit">Save place</Button>
         </form>
