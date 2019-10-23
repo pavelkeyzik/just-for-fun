@@ -13,9 +13,9 @@ function Home() {
       <Terminal />
       <main className="Home__main">
         <h2>
-          {`Welcome! You are in ${(
-            <span aria-label={projectName_Accessible}>{projectName}</span>
-          )} project!`}
+          {'Welcome! You are in '}
+          <span aria-label={projectName_Accessible}>{projectName}</span>
+          {' project!'}
         </h2>
         <p>
           Now you can click the link below that named as 'View places' to get
