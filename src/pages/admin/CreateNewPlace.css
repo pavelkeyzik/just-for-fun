@@ -1,0 +1,28 @@
+.CreateNewPlace__page-grid {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: 4fr 8fr;
+  align-items: flex-start;
+}
+
+.CreateNewPlace__form-grid {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.CreateNewPlace__form-grid label:not(:first-child) {
+  margin-top: 20px;
+}
+
+.CreateNewPlace__form-grid button {
+  margin-top: 20px;
+}
+
+.CreateNewPlace__map-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  background: #222;
+  min-height: 500px;
+}
