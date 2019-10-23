@@ -27,9 +27,7 @@ function CreateNewPlace() {
           <Input type="text" placeholder="Enter name of new place" />
           <Button type="submit">Save place</Button>
         </form>
-        <div className="CreateNewPlace__map-container">
-          <Map />
-        </div>
+        <Map />
       </section>
     </React.Fragment>
   );
