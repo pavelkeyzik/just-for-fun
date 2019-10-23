@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Input } from '../../components/Input';
+import { Map } from './createNewPlace/Map';
 import { Button } from './components/Button';
 
 import './CreateNewPlace.css';
@@ -27,7 +28,7 @@ function CreateNewPlace() {
           <Button type="submit">Save place</Button>
         </form>
         <div className="CreateNewPlace__map-container">
-          Here will be a map...
+          <Map />
         </div>
       </section>
     </React.Fragment>
