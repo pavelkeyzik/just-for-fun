@@ -7,8 +7,10 @@ import { Map } from './createNewPlace/Map';
 import { Button } from './components/Button';
 
 import { useAddPlaceForm } from '../../hooks/add-place-form';
+import { defaultMarkerLat, defaultMarkerLng } from '../../config';
 
 import './CreateNewPlace.css';
+import { AddNewPlaceSpinner } from './createNewPlace/AddNewPlaceSpinner';
 
 export const CREATE_NEW_PLACE = gql`
   mutation AddNewPlace(
@@ -29,7 +31,7 @@ export const CREATE_NEW_PLACE = gql`
 `;
 
 function CreateNewPlace() {
-  const [createNewPlace] = useMutation(CREATE_NEW_PLACE);
+  const [createNewPlace, { loading }] = useMutation(CREATE_NEW_PLACE);
   const {
     name,
     address,
@@ -40,8 +42,8 @@ function CreateNewPlace() {
     setLatitude,
     setLongitude,
   } = useAddPlaceForm({
-    lat: 53.888019427799776,
-    lng: 27.544588765497792,
+    lat: defaultMarkerLat,
+    lng: defaultMarkerLng,
   });
 
   function handleAddNewPlace(event) {
@@ -77,6 +79,9 @@ function CreateNewPlace() {
         <h2>Create new place</h2>
       </div>
       <section className="CreateNewPlace__page-grid">
+        {loading && (
+          <AddNewPlaceSpinner message="Adding a new place to the database..." />
+        )}
         <form
           className="CreateNewPlace__form-grid"
           onSubmit={handleAddNewPlace}

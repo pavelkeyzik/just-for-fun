@@ -1,4 +1,5 @@
 .CreateNewPlace__page-grid {
+  position: relative;
   display: grid;
   grid-template-columns: 3fr 5fr;
   align-items: flex-start;
