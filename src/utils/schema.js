@@ -9,13 +9,27 @@ export const schema = `
     lng: Float!
   }
 
+  input PlaceInput {
+    title: String!
+    address: String!
+    lat: Float!
+    lng: Float!
+  }
+
   type Query {
     places: [Place]!
+  }
+
+  type Mutation {
+    newPlace(input: PlaceInput!): Place!
   }
 `;
 
 export const resolvers = {
   Query: {
     places: () => placesData,
+  },
+  Mutation: {
+    newPlace: () => placesData[0],
   },
 };
