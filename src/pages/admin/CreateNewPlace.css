@@ -1,13 +1,15 @@
 .CreateNewPlace__page-grid {
   display: grid;
-  grid-gap: 40px;
-  grid-template-columns: 4fr 8fr;
+  grid-template-columns: 3fr 5fr;
   align-items: flex-start;
+  background: #222;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .CreateNewPlace__form-grid {
   display: grid;
   grid-gap: 10px;
+  padding: 30px 40px;
 }
 
 .CreateNewPlace__form-grid label:not(:first-child) {
@@ -16,12 +18,4 @@
 
 .CreateNewPlace__form-grid button {
   margin-top: 20px;
-}
-
-.CreateNewPlace__map-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  background: #222;
 }
