@@ -7,6 +7,15 @@
   padding: 30px 40px;
 }
 
+.NavMenu__menu-container a {
+  color: #ddd;
+  font-weight: normal;
+}
+
+.NavMenu__menu-container a:hover {
+  color: #fff;
+}
+
 .NavMenu__site-link {
   display: flex;
   align-items: center;
