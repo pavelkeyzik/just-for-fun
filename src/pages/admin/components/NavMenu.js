@@ -8,18 +8,20 @@ import './NavMenu.css';
 
 export function NavMenu() {
   return (
-    <Nav className="NavMenu__container">
-      <NavItem>
-        <NavLink tag={Link} to={routes.home}>
-          {projectName}
-        </NavLink>
-        <NavLink tag={Link} to={routes.admin.home}>
-          Dashboard
-        </NavLink>
-        <NavLink tag={Link} to={routes.admin.places}>
-          Places
-        </NavLink>
-      </NavItem>
-    </Nav>
+    <div className="NavMenu__container">
+      <Link className="NavMenu__site-link" to={routes.home}>
+        {projectName}
+      </Link>
+      <Nav className="NavMenu__menu-container">
+        <NavItem>
+          <NavLink tag={Link} to={routes.admin.home}>
+            Dashboard
+          </NavLink>
+          <NavLink tag={Link} to={routes.admin.places}>
+            Places
+          </NavLink>
+        </NavItem>
+      </Nav>
+    </div>
   );
 }
