@@ -22,7 +22,7 @@
   justify-content: center;
   width: 100%;
   height: 60px;
-  color: #fff;
+  color: #3a1c1c;
   font-size: 1.2em;
   background: linear-gradient(to top left, var(--pink), var(--yellow));
   border-bottom: 1px solid #151515;
@@ -30,6 +30,6 @@
 
 .NavMenu__site-link:hover {
   background: linear-gradient(to top left, var(--pink) 20%, var(--yellow));
-  color: #fff;
+  color: #3a1c1c;
   text-decoration: none;
 }
