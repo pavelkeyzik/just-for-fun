@@ -19,6 +19,7 @@ export const routes = {
     login: '/admin/login',
     places: '/admin/places',
     createNewPlace: '/admin/create-new-place',
+    events: '/admin/events',
   },
 };
 
