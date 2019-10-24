@@ -20,6 +20,9 @@ export function NavMenu() {
           <NavLink tag={Link} to={routes.admin.places}>
             Places
           </NavLink>
+          <NavLink tag={Link} to={routes.admin.events}>
+            Events
+          </NavLink>
         </NavItem>
       </Nav>
     </div>

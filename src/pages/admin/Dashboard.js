@@ -37,6 +37,11 @@ function Dashboard() {
                   path={routes.admin.createNewPlace}
                   component={CreateNewPlace}
                 />
+                <Route
+                  exact
+                  path={routes.admin.events}
+                  component={() => <div>Events content</div>}
+                />
                 <Route component={() => <div>Nothing found here</div>} />
               </Switch>
             </Suspense>
