@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import { withRouter } from 'react-router-dom';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { routes } from '../../../config';
 
-function LoginForm({ history }) {
-  function handleSubmit(event) {
+function LoginForm({ history }: RouteComponentProps) {
+  function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    localStorage.setItem('isAuthorized', true);
+    localStorage.setItem('isAuthorized', 'true');
     history.push(routes.admin.home);
   }
 

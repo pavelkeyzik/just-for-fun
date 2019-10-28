@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
@@ -11,6 +11,7 @@ import { defaultMarkerLat, defaultMarkerLng } from '../../config';
 
 import './CreateNewPlace.css';
 import { AddNewPlaceSpinner } from './createNewPlace/AddNewPlaceSpinner';
+import { ICoordinates } from '../../types';
 
 export const CREATE_NEW_PLACE = gql`
   mutation AddNewPlace(
@@ -46,7 +47,7 @@ function CreateNewPlace() {
     lng: defaultMarkerLng,
   });
 
-  function handleAddNewPlace(event) {
+  function handleAddNewPlace(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     createNewPlace({
       variables: {
@@ -58,17 +59,19 @@ function CreateNewPlace() {
     });
   }
 
-  function handleChangePlaceName(event) {
+  function handleChangePlaceName(event: React.ChangeEvent<HTMLInputElement>) {
     const value = event.currentTarget.value;
     setName(value);
   }
 
-  function handleChangePlaceAddress(event) {
-    const value = event.currentTarget.value;
+  function handleChangePlaceAddress(
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) {
+    const value = event.currentTarget && event.currentTarget.value;
     setAddress(value);
   }
 
-  function handleChangeMarkerPosition(coordinates) {
+  function handleChangeMarkerPosition(coordinates: ICoordinates) {
     setLatitude(coordinates.latitude);
     setLongitude(coordinates.longitude);
   }
