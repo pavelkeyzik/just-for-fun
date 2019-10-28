@@ -3,7 +3,11 @@ import { Spinner, Container, Row, Col } from 'reactstrap';
 
 import './PageLoader.css';
 
-export function PageLoader({ message }) {
+export interface IPageLoader {
+  message: string;
+}
+
+export function PageLoader({ message }: IPageLoader) {
   return (
     <Container>
       <Row>
