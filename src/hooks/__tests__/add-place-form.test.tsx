@@ -7,12 +7,16 @@ import {
   useAddPlaceForm,
 } from '../add-place-form';
 
-function TestHook({ callback }) {
+interface ITestHook {
+  callback: Function;
+}
+
+function TestHook({ callback }: ITestHook) {
   callback();
   return null;
 }
 
-function testHook(callback) {
+function testHook(callback: Function) {
   mount(<TestHook callback={callback} />);
 }
 
@@ -66,7 +70,7 @@ describe('useAddPlaceForm hook', () => {
   });
 
   test('check that latitude can be updated', () => {
-    const state = { lat: '' };
+    const state = { lat: 0 };
     const newValue = 5.5;
     const action = { type: actions.SET_LATITUDE, payload: newValue };
 
@@ -79,7 +83,7 @@ describe('useAddPlaceForm hook', () => {
   });
 
   test('check that longitude can be updated', () => {
-    const state = { lng: '' };
+    const state = { lng: 0 };
     const newValue = 5.5;
     const action = { type: actions.SET_LONGITUDE, payload: newValue };
 
