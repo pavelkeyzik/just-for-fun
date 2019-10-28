@@ -1,6 +1,6 @@
 import { placesData } from './__mocks__/places';
 
-async function mockedData(data, time = 400) {
+async function mockedData(data: any, time = 400) {
   return await new Promise(res => {
     setTimeout(() => {
       res(data);
