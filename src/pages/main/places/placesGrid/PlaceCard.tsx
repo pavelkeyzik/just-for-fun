@@ -2,8 +2,9 @@ import React from 'react';
 import { Card, CardTitle, CardSubtitle } from 'reactstrap';
 
 import './PlaceCard.css';
+import { IPlaceCard } from '../../../../types';
 
-export function PlaceCard({ information }) {
+export function PlaceCard({ information }: IPlaceCard) {
   return (
     <article className="PlaceCard__container">
       <Card className="PlaceCard__card">

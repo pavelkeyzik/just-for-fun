@@ -1,25 +1,37 @@
 import React, { useState } from 'react';
-import ReactMapGL, { Marker } from 'react-map-gl';
+import ReactMapGL, {
+  Marker,
+  ViewportProps,
+  MapboxProps,
+  DragEvent,
+} from 'react-map-gl';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { mapBoxAPIAccessToken } from '../../../config';
 import { Pin } from '../../../components/Pin';
+import { ICoordinates } from '../../../types';
 
-export function Map({ markerCoordinates, onChangeMarkerPosition }) {
-  const [viewport, setViewport] = useState({
+interface IMapProps {
+  markerCoordinates: ICoordinates;
+  onChangeMarkerPosition: (coordinates: ICoordinates) => void;
+}
+
+export function Map({ markerCoordinates, onChangeMarkerPosition }: IMapProps) {
+  const defaultState: MapboxProps = {
     width: '100%',
     height: 400,
     latitude: 53.8885,
     longitude: 27.545068,
     zoom: 11,
-  });
+  };
+  const [viewport, setViewport] = useState(defaultState);
 
-  function handleViewportChange(updatedViewport) {
+  function handleViewportChange(updatedViewport: ViewportProps) {
     setViewport(updatedViewport);
   }
 
-  function handleChangeMarkerPosition(updatedPosition) {
+  function handleChangeMarkerPosition(updatedPosition: DragEvent) {
     onChangeMarkerPosition({
       latitude: updatedPosition.lngLat[1],
       longitude: updatedPosition.lngLat[0],

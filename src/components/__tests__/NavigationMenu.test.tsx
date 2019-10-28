@@ -24,9 +24,9 @@ test('Title should be equal to projectName field in config', () => {
     </Router>,
     container,
   );
-  const title = container.querySelector('.navbar-brand');
+  const title = container.querySelector<HTMLElement>('.navbar-brand');
 
-  expect(title.textContent).toBe(projectName);
+  expect(title && title.textContent).toBe(projectName);
 });
 
 test('Link to GitHub repo should be equal to projectRepository field in config', () => {
