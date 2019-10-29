@@ -9,6 +9,10 @@ import './Places.css';
 import { PageLoader } from '../../components/PageLoader';
 import { Place } from '../../types';
 
+interface PlacesData {
+  places: Place[];
+}
+
 export const GET_PLACES = gql`
   query {
     places {
@@ -19,7 +23,7 @@ export const GET_PLACES = gql`
 `;
 
 export function Places(): JSX.Element {
-  const { data, loading } = useQuery(GET_PLACES);
+  const { data, loading } = useQuery<PlacesData>(GET_PLACES);
 
   if (loading) {
     return <PageLoader message="Places is loading" />;
@@ -32,12 +36,13 @@ export function Places(): JSX.Element {
         <Link to={routes.admin.createNewPlace}>Create new place</Link>
       </div>
       <section className="Admin__places-grid">
-        {data.places.map((place: Place, index: number) => (
-          <article key={index} className="Admin__place-card">
-            <h3 className="Admin__place-card-title">{place.title}</h3>
-            <span>{place.address}</span>
-          </article>
-        ))}
+        {data &&
+          data.places.map((place: Place, index: number) => (
+            <article key={index} className="Admin__place-card">
+              <h3 className="Admin__place-card-title">{place.title}</h3>
+              <span>{place.address}</span>
+            </article>
+          ))}
       </section>
     </React.Fragment>
   );
