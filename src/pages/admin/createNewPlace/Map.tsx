@@ -10,14 +10,17 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { mapBoxAPIAccessToken } from '../../../config';
 import { Pin } from '../../../components/Pin';
-import { ICoordinates } from '../../../types';
+import { Coordinates } from '../../../types';
 
-interface IMapProps {
-  markerCoordinates: ICoordinates;
-  onChangeMarkerPosition: (coordinates: ICoordinates) => void;
+interface MapProps {
+  markerCoordinates: Coordinates;
+  onChangeMarkerPosition: (coordinates: Coordinates) => void;
 }
 
-export function Map({ markerCoordinates, onChangeMarkerPosition }: IMapProps) {
+export function Map({
+  markerCoordinates,
+  onChangeMarkerPosition,
+}: MapProps): JSX.Element {
   const defaultState: MapboxProps = {
     width: '100%',
     height: 400,
@@ -27,11 +30,11 @@ export function Map({ markerCoordinates, onChangeMarkerPosition }: IMapProps) {
   };
   const [viewport, setViewport] = useState(defaultState);
 
-  function handleViewportChange(updatedViewport: ViewportProps) {
+  function handleViewportChange(updatedViewport: ViewportProps): void {
     setViewport(updatedViewport);
   }
 
-  function handleChangeMarkerPosition(updatedPosition: DragEvent) {
+  function handleChangeMarkerPosition(updatedPosition: DragEvent): void {
     onChangeMarkerPosition({
       latitude: updatedPosition.lngLat[1],
       longitude: updatedPosition.lngLat[0],

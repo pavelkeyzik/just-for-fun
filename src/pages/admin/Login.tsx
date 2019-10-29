@@ -5,7 +5,7 @@ import LoginForm from './login/LoginForm';
 
 import './Login.css';
 
-function Login() {
+function Login(): JSX.Element {
   return (
     <Container>
       <Row className="Login__row">

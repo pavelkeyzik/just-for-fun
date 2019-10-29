@@ -2,9 +2,13 @@ import React from 'react';
 import { Card, CardTitle, CardSubtitle } from 'reactstrap';
 
 import './PlaceCard.css';
-import { IPlaceCard } from '../../../../types';
+import { Place } from '../../../../types';
 
-export function PlaceCard({ information }: IPlaceCard) {
+export interface PlaceCardProps {
+  information: Place;
+}
+
+export function PlaceCard({ information }: PlaceCardProps): JSX.Element {
   return (
     <article className="PlaceCard__container">
       <Card className="PlaceCard__card">

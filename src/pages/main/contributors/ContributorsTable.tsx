@@ -3,7 +3,7 @@ import { Table } from 'reactstrap';
 
 import './ContributorsTable.css';
 
-export function ContributorsTable() {
+export function ContributorsTable(): JSX.Element {
   return (
     <Table className="ContributorsTable__table">
       <thead>

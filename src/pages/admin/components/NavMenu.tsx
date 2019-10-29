@@ -6,7 +6,7 @@ import { routes, projectName } from '../../../config';
 
 import './NavMenu.css';
 
-export function NavMenu() {
+export function NavMenu(): JSX.Element {
   return (
     <div className="NavMenu__container">
       <Link className="NavMenu__site-link" to={routes.home}>

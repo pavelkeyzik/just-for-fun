@@ -14,7 +14,7 @@ const Places = React.lazy(() => import('./main/Places'));
 const Contributors = React.lazy(() => import('./main/Contributors'));
 const NotFound = React.lazy(() => import('./main/NotFound'));
 
-function Main() {
+function Main(): JSX.Element {
   return (
     <div>
       <NavigationMenu />

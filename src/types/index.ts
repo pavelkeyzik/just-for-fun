@@ -1,15 +1,11 @@
-export interface IPlace {
+export interface Place {
   title?: string;
   address?: string;
   lat?: number;
   lng?: number;
 }
 
-export interface IPlaceCard {
-  information: IPlace;
-}
-
-export interface ICoordinates {
+export interface Coordinates {
   latitude: number;
   longitude: number;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Terminal.css';
 
-export function Terminal() {
+export function Terminal(): JSX.Element {
   return (
     <div className="Terminal">
       <div className="Terminal-header">

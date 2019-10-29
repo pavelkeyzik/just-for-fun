@@ -2,11 +2,12 @@ import React from 'react';
 
 import './Button.css';
 
-interface IButtonProps {
+interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   children: React.ReactNode;
+  type: 'submit' | 'reset' | 'button';
 }
 
-export function Button({ children, ...props }: IButtonProps) {
+export function Button({ children, ...props }: ButtonProps): JSX.Element {
   return (
     <button className="Button" {...props}>
       {children}
