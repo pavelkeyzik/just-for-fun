@@ -3,7 +3,7 @@ import {
   apiBase,
   projectRepository,
   projectName,
-  projectName_Accessible,
+  projectNameAccessible,
 } from '../config';
 
 describe('Configuration file', () => {
@@ -39,6 +39,6 @@ describe('Configuration file', () => {
   });
 
   test('check accessible project name', () => {
-    expect(projectName_Accessible).toEqual('Just for fun');
+    expect(projectNameAccessible).toEqual('Just for fun');
   });
 });

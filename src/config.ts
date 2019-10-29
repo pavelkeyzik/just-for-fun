@@ -6,7 +6,7 @@ export const apiBase = isProduction
 
 export const projectRepository = 'https://github.com/pavelkeyzik/just-for-fun';
 export const projectName = 'JUSTFORFUN';
-export const projectName_Accessible = 'Just for fun';
+export const projectNameAccessible = 'Just for fun';
 
 export const mapBoxAPIAccessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 

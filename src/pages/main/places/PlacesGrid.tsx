@@ -3,9 +3,9 @@ import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import { Alert, Row, Col } from 'reactstrap';
 
-import { PlaceCard } from './placesGrid/PlaceCard.js';
+import { PlaceCard } from './placesGrid/PlaceCard';
 import { PageLoader } from '../../../components/PageLoader';
-import { IPlace } from '../../../types/index.js';
+import { Place } from '../../../types/index.js';
 
 export const GET_PLACES = gql`
   query getPlaces {
@@ -18,7 +18,7 @@ export const GET_PLACES = gql`
   }
 `;
 
-export function PlacesGrid() {
+export function PlacesGrid(): JSX.Element {
   const { data, error, loading } = useQuery(GET_PLACES);
 
   if (error) {
@@ -34,7 +34,7 @@ export function PlacesGrid() {
       <Row>
         {data &&
           data.places &&
-          data.places.map((place: IPlace, index: number) => (
+          data.places.map((place: Place, index: number) => (
             <Col key={index} sm={{ size: '6' }}>
               <PlaceCard key={index} information={place} />
             </Col>

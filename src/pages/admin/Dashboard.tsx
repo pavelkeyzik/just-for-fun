@@ -14,7 +14,7 @@ import { routes } from '../../config';
 import { Places } from './Places';
 import CreateNewPlace from './CreateNewPlace';
 
-function Dashboard() {
+function Dashboard(): JSX.Element {
   return (
     <Container fluid>
       <Row className="Dashboard__container">
@@ -29,7 +29,7 @@ function Dashboard() {
                 <Route
                   exact
                   path={routes.admin.home}
-                  component={() => <div>Dashboard content</div>}
+                  component={(): JSX.Element => <div>Dashboard content</div>}
                 />
                 <Route exact path={routes.admin.places} component={Places} />
                 <Route
@@ -40,9 +40,11 @@ function Dashboard() {
                 <Route
                   exact
                   path={routes.admin.events}
-                  component={() => <div>Events content</div>}
+                  component={(): JSX.Element => <div>Events content</div>}
                 />
-                <Route component={() => <div>Nothing found here</div>} />
+                <Route
+                  component={(): JSX.Element => <div>Nothing found here</div>}
+                />
               </Switch>
             </Suspense>
           </main>

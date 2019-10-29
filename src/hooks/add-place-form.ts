@@ -1,25 +1,32 @@
 import { useReducer } from 'react';
 
-interface IAddPlaceForm {
+interface State {
   name?: string;
   address?: string;
-  lat?: number;
-  lng?: number;
+  lat: number;
+  lng: number;
 }
 
-interface IAction {
+interface Action {
   type: string;
   payload: any;
 }
 
-interface IActions {
+interface Actions {
   SET_NAME: string;
   SET_ADDRESS: string;
   SET_LATITUDE: string;
   SET_LONGITUDE: string;
 }
 
-export const actions: IActions = {
+interface HookType extends State {
+  setName: (name: string) => void;
+  setAddress: (address: string) => void;
+  setLatitude: (latitude: number) => void;
+  setLongitude: (longitude: number) => void;
+}
+
+export const actions: Actions = {
   SET_NAME: 'SET_NAME',
   SET_ADDRESS: 'SET_ADDRESS',
   SET_LATITUDE: 'SET_LATITUDE',
@@ -29,14 +36,14 @@ export const actions: IActions = {
 /**
  * Inital state for reducer
  */
-export const initialState: IAddPlaceForm = {
+export const initialState: State = {
   name: '',
   address: '',
   lat: 0.0,
   lng: 0.0,
 };
 
-export function reducer(state: IAddPlaceForm, action: IAction) {
+export function reducer(state: State, action: Action): State {
   switch (action.type) {
     case actions.SET_NAME:
       return {
@@ -66,7 +73,7 @@ export function reducer(state: IAddPlaceForm, action: IAction) {
 /**
  * Hook for `Add new place` form
  */
-export function useAddPlaceForm(defaultState?: IAddPlaceForm) {
+export function useAddPlaceForm(defaultState?: State): HookType {
   const [state, dispatch] = useReducer(reducer, {
     ...initialState,
     ...defaultState,
@@ -77,7 +84,7 @@ export function useAddPlaceForm(defaultState?: IAddPlaceForm) {
    *
    * @param {strign} value - New value of place name
    */
-  function setName(value: string) {
+  function setName(value: string): void {
     dispatch({ type: actions.SET_NAME, payload: value });
   }
 
@@ -86,7 +93,7 @@ export function useAddPlaceForm(defaultState?: IAddPlaceForm) {
    *
    * @param {strign} value - New value of place address
    */
-  function setAddress(value: string) {
+  function setAddress(value: string): void {
     dispatch({ type: actions.SET_ADDRESS, payload: value });
   }
 
@@ -95,7 +102,7 @@ export function useAddPlaceForm(defaultState?: IAddPlaceForm) {
    *
    * @param {strign} value - New value of latitude coordinate
    */
-  function setLatitude(value: number) {
+  function setLatitude(value: number): void {
     dispatch({ type: actions.SET_LATITUDE, payload: value });
   }
 
@@ -104,7 +111,7 @@ export function useAddPlaceForm(defaultState?: IAddPlaceForm) {
    *
    * @param {strign} value - New value of latitude coordinate
    */
-  function setLongitude(value: number) {
+  function setLongitude(value: number): void {
     dispatch({ type: actions.SET_LONGITUDE, payload: value });
   }
 

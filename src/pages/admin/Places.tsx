@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
@@ -7,7 +7,7 @@ import { routes } from '../../config';
 
 import './Places.css';
 import { PageLoader } from '../../components/PageLoader';
-import { IPlace } from '../../types';
+import { Place } from '../../types';
 
 export const GET_PLACES = gql`
   query {
@@ -18,7 +18,7 @@ export const GET_PLACES = gql`
   }
 `;
 
-export function Places() {
+export function Places(): JSX.Element {
   const { data, loading } = useQuery(GET_PLACES);
 
   if (loading) {
@@ -32,7 +32,7 @@ export function Places() {
         <Link to={routes.admin.createNewPlace}>Create new place</Link>
       </div>
       <section className="Admin__places-grid">
-        {data.places.map((place: IPlace, index: number) => (
+        {data.places.map((place: Place, index: number) => (
           <article key={index} className="Admin__place-card">
             <h3 className="Admin__place-card-title">{place.title}</h3>
             <span>{place.address}</span>

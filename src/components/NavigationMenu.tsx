@@ -12,7 +12,7 @@ import {
 import { projectRepository, projectName, routes } from '../config';
 import './NavigationMenu.css';
 
-export function NavigationMenu() {
+export function NavigationMenu(): JSX.Element {
   return (
     <Container>
       <Navbar dark>

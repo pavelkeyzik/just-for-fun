@@ -8,7 +8,7 @@ import { PageLoader } from '../components/PageLoader';
 const Login = React.lazy(() => import('./admin/Login'));
 const Dashboard = React.lazy(() => import('./admin/Dashboard'));
 
-function Admin() {
+function Admin(): JSX.Element {
   const isAuthorized = localStorage.getItem('isAuthorized');
 
   return (
