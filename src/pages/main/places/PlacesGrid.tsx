@@ -7,6 +7,10 @@ import { PlaceCard } from './placesGrid/PlaceCard';
 import { PageLoader } from '../../../components/PageLoader';
 import { Place } from '../../../types/index.js';
 
+interface PlacesData {
+  places: Place[];
+}
+
 export const GET_PLACES = gql`
   query getPlaces {
     places {
@@ -19,7 +23,7 @@ export const GET_PLACES = gql`
 `;
 
 export function PlacesGrid(): JSX.Element {
-  const { data, error, loading } = useQuery(GET_PLACES);
+  const { data, error, loading } = useQuery<PlacesData>(GET_PLACES);
 
   if (error) {
     return <Alert color="danger">{error.message}</Alert>;
@@ -33,7 +37,6 @@ export function PlacesGrid(): JSX.Element {
     <section>
       <Row>
         {data &&
-          data.places &&
           data.places.map((place: Place, index: number) => (
             <Col key={index} sm={{ size: '6' }}>
               <PlaceCard key={index} information={place} />

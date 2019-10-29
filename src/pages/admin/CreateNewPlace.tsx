@@ -11,10 +11,14 @@ import { defaultMarkerLat, defaultMarkerLng } from '../../config';
 
 import './CreateNewPlace.css';
 import { AddNewPlaceSpinner } from './createNewPlace/AddNewPlaceSpinner';
-import { Coordinates } from '../../types';
+import { Coordinates, Place } from '../../types';
+
+interface NewPlaceData {
+  addNewPlace: Place;
+}
 
 export const CREATE_NEW_PLACE = gql`
-  mutation AddNewPlace(
+  mutation addNewPlace(
     $title: String!
     $address: String!
     $lat: Float!
@@ -32,7 +36,9 @@ export const CREATE_NEW_PLACE = gql`
 `;
 
 function CreateNewPlace(): JSX.Element {
-  const [createNewPlace, { loading }] = useMutation(CREATE_NEW_PLACE);
+  const [createNewPlace, { loading }] = useMutation<NewPlaceData, Place>(
+    CREATE_NEW_PLACE,
+  );
   const {
     name,
     address,
