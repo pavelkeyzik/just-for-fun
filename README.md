@@ -1,12 +1,15 @@
 # JUST FOR FUN :sunny:
 
-## No Redux! No REST! Just Hype...
+## What are we using?
 
-- React Hooks
+- React && React Hooks
+- Reactstrap
 - GraphQL
 - Apollo Client
 - TypeScript
 - Fractal architecture
+- Jest && Enzyme
+- Mapbox
 
 ## How to contribute
 
