@@ -19,15 +19,15 @@ function Main(): JSX.Element {
     <div>
       <NavigationMenu />
       <GradientLine />
+      <Suspense fallback={<PageLoader message="Main page is loading..." />}>
+        <Switch>
+          <Route exact path={routes.home} component={Home} />
+          <Route exact path={routes.places} component={Places} />
+          <Route exact path={routes.contributors} component={Contributors} />
+          <Route component={NotFound} />
+        </Switch>
+      </Suspense>
       <Container>
-        <Suspense fallback={<PageLoader message="Main page is loading..." />}>
-          <Switch>
-            <Route exact path={routes.home} component={Home} />
-            <Route exact path={routes.places} component={Places} />
-            <Route exact path={routes.contributors} component={Contributors} />
-            <Route component={NotFound} />
-          </Switch>
-        </Suspense>
         <Footer />
       </Container>
     </div>

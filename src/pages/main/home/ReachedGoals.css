@@ -1,0 +1,16 @@
+.ReachedGoals__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 40px;
+  padding: 40px;
+  background: #45B649;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+.ReachedGoals__icon {
+  margin: 0 20px;
+  font-size: 1.8em;
+}
