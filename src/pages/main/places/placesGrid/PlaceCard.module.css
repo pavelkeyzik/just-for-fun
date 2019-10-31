@@ -1,8 +1,8 @@
-.PlaceCard__container {
+.root {
   margin-bottom: 20px;
 }
 
-.PlaceCard__card {
+.card {
   padding: 10px 20px;
   background: #222;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardTitle, CardSubtitle } from 'reactstrap';
 
-import './PlaceCard.css';
+import styles from './PlaceCard.module.css';
 import { Place } from '../../../../types';
 
 export interface PlaceCardProps {
@@ -10,14 +10,12 @@ export interface PlaceCardProps {
 
 export function PlaceCard({ information }: PlaceCardProps): JSX.Element {
   return (
-    <article className="PlaceCard__container">
-      <Card className="PlaceCard__card">
-        <CardTitle className="PlaceCard__card-title">
+    <article className={styles.root}>
+      <Card className={styles.card}>
+        <CardTitle>
           <h3 aria-label={information.title + ' place'}>{information.title}</h3>
         </CardTitle>
-        <CardSubtitle className="PlaceCard__card-address">
-          {information.address}
-        </CardSubtitle>
+        <CardSubtitle>{information.address}</CardSubtitle>
       </Card>
     </article>
   );
