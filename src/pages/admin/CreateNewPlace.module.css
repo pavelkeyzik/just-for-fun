@@ -1,4 +1,4 @@
-.CreateNewPlace__page-grid {
+.pageGrid {
   position: relative;
   display: grid;
   grid-template-columns: 3fr 5fr;
@@ -7,16 +7,16 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.CreateNewPlace__form-grid {
+.formGrid {
   display: grid;
   grid-gap: 10px;
   padding: 30px 40px;
 }
 
-.CreateNewPlace__form-grid label:not(:first-child) {
+.formGrid label:not(:first-child) {
   margin-top: 20px;
 }
 
-.CreateNewPlace__form-grid button {
+.formGrid button {
   margin-top: 20px;
 }

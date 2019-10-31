@@ -9,7 +9,7 @@ import { Button } from './components/Button';
 import { useAddPlaceForm } from '../../hooks/add-place-form';
 import { defaultMarkerLat, defaultMarkerLng } from '../../config';
 
-import './CreateNewPlace.css';
+import styles from './CreateNewPlace.module.css';
 import { AddNewPlaceSpinner } from './createNewPlace/AddNewPlaceSpinner';
 import { Coordinates, Place } from '../../types';
 
@@ -86,17 +86,14 @@ function CreateNewPlace(): JSX.Element {
 
   return (
     <React.Fragment>
-      <div className="Page__short-info">
+      <div>
         <h2>Create new place</h2>
       </div>
-      <section className="CreateNewPlace__page-grid">
+      <section className={styles.pageGrid}>
         {loading && (
           <AddNewPlaceSpinner message="Adding a new place to the database..." />
         )}
-        <form
-          className="CreateNewPlace__form-grid"
-          onSubmit={handleAddNewPlace}
-        >
+        <form className={styles.formGrid} onSubmit={handleAddNewPlace}>
           <label>Place name</label>
           <Input
             value={name}
