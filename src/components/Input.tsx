@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './Input.css';
+import styles from './Input.module.css';
 
 export function Input({ ...props }): JSX.Element {
-  return <input className="Input" {...props} />;
+  return <input className={styles.input} {...props} />;
 }

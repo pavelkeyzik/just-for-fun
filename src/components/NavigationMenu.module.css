@@ -1,8 +1,8 @@
-.NavigationMenu__container a {
+.menu a {
   color: var(--link-foreground);
 }
 
-.NavigationMenu__container a:hover {
+.menu a:hover {
   color: var(--link-foreground-hover);
   text-decoration: underline;
 }
