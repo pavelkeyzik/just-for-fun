@@ -1,51 +1,51 @@
-.Terminal {
+.root {
   background: #222;
   margin: 40px 0 30px;
 }
 
-.Terminal-header {
+.header {
   display: flex;
   padding: 10px 20px;
   background: #191919;
 }
 
-.Terminal-buttons {
+.buttons {
   display: grid;
   grid-gap: 6px;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.Terminal-button {
+.button {
   width: 14px;
   height: 14px;
   border-radius: 50%;
 }
 
-.Terminal-button_close {
+.close {
   background: #e45f65;
 }
 
-.Terminal-button_minimize {
+.minimize {
   background: #f0b23f;
 }
 
-.Terminal-button_fullscreen {
+.fullscreen {
   background: #31b941;
 }
 
-.Terminal-content {
+.content {
   padding: 20px 30px;
   color: #ccc;
 }
 
-.Terminal-content code {
+.content code {
   color: #ccc;
 }
 
-.Terminal-content code b {
+.content code b {
   color: #fff;
 }
 
-.Terminal-content_success {
+.contentSuccess {
   color: #90ee90;
 }
