@@ -1,11 +1,11 @@
 import React from 'react';
 import { Table } from 'reactstrap';
 
-import './ContributorsTable.css';
+import styles from './ContributorsTable.module.css';
 
 export function ContributorsTable(): JSX.Element {
   return (
-    <Table className="ContributorsTable__table">
+    <Table className={styles.table}>
       <thead>
         <tr>
           <th>#</th>
