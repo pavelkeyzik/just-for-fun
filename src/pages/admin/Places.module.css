@@ -1,17 +1,17 @@
-.Page__short-info {
+.shortInfo {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
 }
 
-.Admin__places-grid {
+.placesGrid {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.Admin__place-card {
+.placeCard {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,6 +21,6 @@
   box-shadow: 0 3px 25px rgb(0, 0, 0, 0.3);
 }
 
-.Admin__place-card-title {
+.placeCardTitle {
   font-weight: bold;
 }

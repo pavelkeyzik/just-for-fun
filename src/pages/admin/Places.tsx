@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 
 import { routes } from '../../config';
 
-import './Places.css';
+import styles from './Places.module.css';
 import { PageLoader } from '../../components/PageLoader';
 import { Place } from '../../types';
 
@@ -31,15 +31,15 @@ export function Places(): JSX.Element {
 
   return (
     <React.Fragment>
-      <div className="Page__short-info">
+      <div className={styles.shortInfo}>
         <h2>Places</h2>
         <Link to={routes.admin.createNewPlace}>Create new place</Link>
       </div>
-      <section className="Admin__places-grid">
+      <section className={styles.placesGrid}>
         {data &&
           data.places.map((place: Place, index: number) => (
-            <article key={index} className="Admin__place-card">
-              <h3 className="Admin__place-card-title">{place.title}</h3>
+            <article key={index} className={styles.placeCard}>
+              <h3 className={styles.placeCardTitle}>{place.title}</h3>
               <span>{place.address}</span>
             </article>
           ))}
