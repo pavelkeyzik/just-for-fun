@@ -7,7 +7,7 @@ import { NavMenu } from './components/NavMenu';
 import { SideBar } from './components/SideBar';
 import { ActionsPanel } from './components/ActionsPanel';
 
-import './Dashboard.css';
+import styles from './Dashboard.module.css';
 
 import { routes } from '../../config';
 
@@ -17,13 +17,13 @@ import CreateNewPlace from './CreateNewPlace';
 function Dashboard(): JSX.Element {
   return (
     <Container fluid>
-      <Row className="Dashboard__container">
-        <Col xl="2" className="Dashboard__column">
+      <Row className={styles.container}>
+        <Col xl="2" className={styles.column}>
           <NavMenu />
         </Col>
-        <Col xl="7" className="Dashboard__column">
+        <Col xl="7" className={styles.column}>
           <ActionsPanel />
-          <main className="Dashboard__main">
+          <main className={styles.main}>
             <Suspense fallback={<PageLoader message="Content is loading" />}>
               <Switch>
                 <Route
@@ -49,7 +49,7 @@ function Dashboard(): JSX.Element {
             </Suspense>
           </main>
         </Col>
-        <Col xl="3" className="Dashboard__column">
+        <Col xl="3" className={styles.column}>
           <SideBar />
         </Col>
       </Row>
