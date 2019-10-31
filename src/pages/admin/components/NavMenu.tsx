@@ -4,15 +4,15 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
 
 import { routes, projectName } from '../../../config';
 
-import './NavMenu.css';
+import styles from './NavMenu.module.css';
 
 export function NavMenu(): JSX.Element {
   return (
-    <div className="NavMenu__container">
-      <Link className="NavMenu__site-link" to={routes.home}>
+    <div className={styles.container}>
+      <Link className={styles.siteLink} to={routes.home}>
         {projectName}
       </Link>
-      <Nav className="NavMenu__menu-container">
+      <Nav className={styles.menuContainer}>
         <NavItem>
           <NavLink tag={Link} to={routes.admin.home}>
             Dashboard

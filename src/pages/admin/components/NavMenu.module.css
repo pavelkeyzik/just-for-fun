@@ -1,22 +1,22 @@
-.NavMenu__container {
+.container {
   background: #080808;
   height: 100%;
 }
 
-.NavMenu__menu-container {
+.menuContainer {
   padding: 30px 40px;
 }
 
-.NavMenu__menu-container a {
+.menuContainer a {
   color: #ddd;
   font-weight: normal;
 }
 
-.NavMenu__menu-container a:hover {
+.menuContainer a:hover {
   color: #fff;
 }
 
-.NavMenu__site-link {
+.siteLink {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,7 +28,7 @@
   border-bottom: 1px solid #151515;
 }
 
-.NavMenu__site-link:hover {
+.siteLink:hover {
   background: linear-gradient(to top left, var(--pink) 20%, var(--yellow));
   color: #3a1c1c;
   text-decoration: none;
