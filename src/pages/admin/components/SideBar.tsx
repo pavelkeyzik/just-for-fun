@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './SideBar.css';
+import styles from './SideBar.module.css';
 
 export function SideBar(): JSX.Element {
-  return <div className="SideBar__container">SideBar</div>;
+  return <div className={styles.container}>SideBar</div>;
 }

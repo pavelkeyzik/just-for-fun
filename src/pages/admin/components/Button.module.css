@@ -1,4 +1,4 @@
-.Button {
+.button {
   display: flex;
   justify-content: center;
   height: 45px;
@@ -10,8 +10,8 @@
   transition: 0.2s;
 }
 
-.Button:hover,
-.Button:focus {
+.button:hover,
+.button:focus {
   color: var(--pink);
   border: 2px solid var(--pink);
 }

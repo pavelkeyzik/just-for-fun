@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './ActionsPanel.css';
+import styles from './ActionsPanel.module.css';
 
 export function ActionsPanel(): JSX.Element {
-  return <div className="ActionsPanel__container">Here will be actions</div>;
+  return <div className={styles.container}>Here will be actions</div>;
 }
