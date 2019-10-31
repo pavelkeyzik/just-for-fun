@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './Footer.css';
+import styles from './Footer.module.css';
 
 export function Footer(): JSX.Element {
-  return <div className="Footer">Make fun with love</div>;
+  return <div className={styles.footer}>Make fun with love</div>;
 }

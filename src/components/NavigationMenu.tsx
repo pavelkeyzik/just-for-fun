@@ -10,7 +10,7 @@ import {
 } from 'reactstrap';
 
 import { projectRepository, projectName, routes } from '../config';
-import './NavigationMenu.css';
+import styles from './NavigationMenu.module.css';
 
 export function NavigationMenu(): JSX.Element {
   return (
@@ -19,7 +19,7 @@ export function NavigationMenu(): JSX.Element {
         <NavbarBrand tag={Link} to={routes.home} aria-label="Home page">
           {projectName}
         </NavbarBrand>
-        <Nav className="NavigationMenu__container">
+        <Nav className={styles.menu}>
           <NavItem>
             <NavLink tag={Link} to={routes.contributors}>
               Contributors

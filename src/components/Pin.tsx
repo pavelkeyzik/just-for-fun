@@ -2,8 +2,8 @@ import React from 'react';
 
 import { ReactComponent as PinIcon } from '../images/pin.svg';
 
-import './Pin.css';
+import styles from './Pin.module.css';
 
 export function Pin(): JSX.Element {
-  return <PinIcon className="Pin__icon" />;
+  return <PinIcon className={styles.pin} />;
 }

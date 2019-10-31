@@ -1,4 +1,4 @@
-.Input {
+.input {
   font-size: 1em;
   background: #333;
   color: #fff;
@@ -6,7 +6,7 @@
   padding: 10px 20px;
 }
 
-.Input::placeholder {
+.input::placeholder {
   color: #aaa;
   opacity: 1;
 }
