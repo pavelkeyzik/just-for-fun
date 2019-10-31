@@ -1,0 +1,11 @@
+.container {
+  min-height: 100vh;
+}
+
+.column {
+  padding: 0;
+}
+
+.main {
+  padding: 30px;
+}
