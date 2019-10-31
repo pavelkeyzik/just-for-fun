@@ -3,13 +3,13 @@ import { Container } from 'reactstrap';
 
 import { ContributorsTable } from './contributors/ContributorsTable';
 
-import './Contributors.css';
+import styles from './Contributors.module.css';
 
 function Contributors(): JSX.Element {
   return (
     <Container>
-      <main className="Contributors__main">
-        <h2 className="Contributors__section-title">Contributors</h2>
+      <main className={styles.main}>
+        <h2 className={styles.sectionTitle}>Contributors</h2>
         <ContributorsTable />
       </main>
     </Container>
