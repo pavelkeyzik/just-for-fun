@@ -6,14 +6,14 @@ import { Terminal } from './home/Terminal';
 import { ReachedGoals } from './home/ReachedGoals';
 import { projectName, projectNameAccessible, routes } from '../../config';
 
-import './Home.css';
+import styles from './Home.module.css';
 
 function Home(): JSX.Element {
   return (
     <React.Fragment>
       <Container>
         <Terminal />
-        <main className="Home__main">
+        <main className={styles.main}>
           <h2>
             {'Welcome! You are in '}
             <span aria-label={projectNameAccessible}>{projectName}</span>
@@ -30,7 +30,7 @@ function Home(): JSX.Element {
             color="primary"
             outline
             aria-label="View places"
-            className="Home__button-fluid"
+            className={styles.button}
           >
             View places
           </Button>
