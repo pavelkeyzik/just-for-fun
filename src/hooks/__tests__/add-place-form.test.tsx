@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
 import {
   actions,
   initialState,
@@ -17,7 +17,7 @@ function TestHook({ callback }: TestHookProps): null {
 }
 
 function testHook(callback: Function): void {
-  mount(<TestHook callback={callback} />);
+  render(<TestHook callback={callback} />);
 }
 
 describe('useAddPlaceForm hook', () => {
