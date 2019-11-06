@@ -37,3 +37,13 @@ test('Link to GitHub repo should be equal to projectRepository field in config',
 
   expect(repoLinkElement.getAttribute('href')).toBe(projectRepository);
 });
+
+test('Check snapshot', () => {
+  const { container } = render(
+    <Router>
+      <NavigationMenu />
+    </Router>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
