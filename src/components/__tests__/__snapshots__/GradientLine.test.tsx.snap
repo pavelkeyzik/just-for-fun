@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render one GradientLine component: <div class="line" /> 1`] = `
+exports[`should render one GradientLine component 1`] = `
 <div
   class="line"
   data-attr="someattr"
