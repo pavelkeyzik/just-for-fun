@@ -43,7 +43,6 @@ REACT_APP_MAPBOX_ACCESS_TOKEN="...your_access_token..."
 │   │   ├── admin/
 │   │   └── main/
 │   ├── react-app-env.d.ts
-│   ├── setupTests.ts      # Configuration for tests (Enzyme init)
 │   ├── styles.css         # Global styles
 │   ├── types/             # Global types and interfaces
 │   └── utils/

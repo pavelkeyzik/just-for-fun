@@ -1,11 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@testing-library/react';
 import { GradientLine } from '../GradientLine';
 
 test('should render one GradientLine component', () => {
-  const container = document.createElement('div');
-  ReactDOM.render(<GradientLine />, container);
-  const element = container.querySelectorAll('.GradientLine__container');
+  const { container } = render(<GradientLine />);
 
-  expect(element.length).toBe(1);
+  expect(container.firstChild).toMatchSnapshot('<div class="line" />');
 });
