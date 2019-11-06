@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check snapshot 1`] = `
+<div
+  class="container"
+>
+  <nav
+    class="navbar navbar-dark"
+  >
+    <a
+      aria-label="Home page"
+      class="navbar-brand"
+      href="/"
+    >
+      PROJECT_NAME
+    </a>
+    <ul
+      class="menu nav"
+    >
+      <li
+        class="nav-item"
+      >
+        <a
+          class="nav-link"
+          href="/contributors"
+        >
+          Contributors
+        </a>
+      </li>
+      <li
+        class="nav-item"
+      >
+        <a
+          class="nav-link"
+          href="PROJECT_LINK"
+        >
+          GitHub
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
