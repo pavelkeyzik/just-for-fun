@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should apply any given props to element: should be an input with passed placeholder value 1`] = `
+<input
+  class="input"
+  data-testid="input"
+  placeholder="Input placeholder"
+/>
+`;
+
+exports[`Should be input element: should be an input 1`] = `
+<input
+  class="input"
+  data-testid="input"
+/>
+`;
