@@ -27,9 +27,7 @@ function Main(): JSX.Element {
           <Route component={NotFound} />
         </Switch>
       </Suspense>
-      <Container>
-        <Footer />
-      </Container>
+      <Footer />
     </div>
   );
 }
