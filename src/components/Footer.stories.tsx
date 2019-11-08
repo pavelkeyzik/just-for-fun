@@ -6,6 +6,6 @@ export default {
   title: 'Footer',
 };
 
-export function withoutAnyProps() {
+export function withoutAnyProps(): JSX.Element {
   return <Footer />;
 }
