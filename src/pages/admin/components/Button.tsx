@@ -4,7 +4,7 @@ import styles from './Button.module.css';
 
 interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
   children: React.ReactNode;
-  type: 'submit' | 'reset' | 'button';
+  type?: 'submit' | 'reset' | 'button';
 }
 
 export function Button({ children, ...props }: ButtonProps): JSX.Element {

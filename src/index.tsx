@@ -6,8 +6,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import { routes } from './config';
 import { client } from './utils/api';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles.css';
+import './setup';
 
 import { PageLoader } from './components/PageLoader';
 

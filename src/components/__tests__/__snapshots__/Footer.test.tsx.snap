@@ -2,8 +2,16 @@
 
 exports[`Check snapshot 1`] = `
 <div
-  class="footer"
+  class="footerContainer"
 >
-  Make fun with love
+  <div
+    class="container"
+  >
+    <footer
+      class="footer"
+    >
+      Make fun with love
+    </footer>
+  </div>
 </div>
 `;
