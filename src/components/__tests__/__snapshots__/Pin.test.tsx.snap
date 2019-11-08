@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render SVG element with Pin icon 1`] = `
+<svg
+  class="pin"
+>
+  pin.svg
+</svg>
+`;
