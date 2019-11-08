@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check snapshot with \`Hello World\` 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="row"
+  >
+    <div
+      class="col"
+    >
+      <div
+        class="loader"
+      >
+        <div
+          class="spinner-grow text-success"
+          role="status"
+        >
+          <span
+            class="sr-only"
+          >
+            Loading...
+          </span>
+        </div>
+        <b>
+          Hello World
+        </b>
+      </div>
+    </div>
+  </div>
+</div>
+`;
