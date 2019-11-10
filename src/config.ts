@@ -8,7 +8,7 @@ export const projectRepository = 'https://github.com/pavelkeyzik/just-for-fun';
 export const projectName = 'JUSTFORFUN';
 export const projectNameAccessible = 'Just for fun';
 
-export const mapBoxAPIAccessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
+export const mapBoxAPIAccessToken = process.env.MAPBOX_ACCESS_TOKEN;
 
 export const routes = {
   home: '/',

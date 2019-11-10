@@ -1,18 +1,13 @@
 module.exports = function() {
   return {
     resolve: {
-      extensions: ['.ts', '.tsx', '.js'],
+      extensions: ['.ts', '.tsx', '.mjs', '.js'],
     },
     module: {
       rules: [
         {
           test: /\.ts(x?)$/,
-          exclude: /node_modules/,
-          use: [
-            {
-              loader: 'ts-loader',
-            },
-          ],
+          use: ['ts-loader'],
         },
       ],
     },
