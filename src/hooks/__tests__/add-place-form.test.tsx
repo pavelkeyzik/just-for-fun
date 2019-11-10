@@ -44,7 +44,7 @@ describe('useAddPlaceForm hook', () => {
   });
 
   test('check that name can be updated', () => {
-    const state = { name: '' };
+    const state = { name: '', lat: 0, lng: 0 };
     const newValue = 'New name';
     const action = { type: actions.SET_NAME, payload: newValue };
 
@@ -57,7 +57,7 @@ describe('useAddPlaceForm hook', () => {
   });
 
   test('check that address can be updated', () => {
-    const state = { address: '' };
+    const state = { address: '', lat: 0, lng: 0 };
     const newValue = 'New address';
     const action = { type: actions.SET_ADDRESS, payload: newValue };
 
@@ -70,7 +70,7 @@ describe('useAddPlaceForm hook', () => {
   });
 
   test('check that latitude can be updated', () => {
-    const state = { lat: 0 };
+    const state = { lat: 0, lng: 0 };
     const newValue = 5.5;
     const action = { type: actions.SET_LATITUDE, payload: newValue };
 
@@ -83,7 +83,7 @@ describe('useAddPlaceForm hook', () => {
   });
 
   test('check that longitude can be updated', () => {
-    const state = { lng: 0 };
+    const state = { lat: 0, lng: 0 };
     const newValue = 5.5;
     const action = { type: actions.SET_LONGITUDE, payload: newValue };
 
@@ -131,6 +131,8 @@ describe('useAddPlaceForm hook', () => {
     let stateToCheck = null;
     const defaultState = {
       name: 'asd',
+      lat: 0,
+      lng: 0,
     };
     const objectToCheck = {
       name: 'asd',
