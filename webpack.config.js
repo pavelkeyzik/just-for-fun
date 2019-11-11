@@ -5,11 +5,7 @@ const webpackMerge = require('webpack-merge');
 const presetConfig = require('./build-utils/load-presets');
 const dotenv = require('dotenv');
 
-const parsedEnvVariables = dotenv.config().parsed;
-const envKeys = Object.keys(parsedEnvVariables).reduce((prev, next) => {
-  prev[`process.env.${next}`] = JSON.stringify(parsedEnvVariables[next]);
-  return prev;
-}, {});
+dotenv.config();
 
 function modeConfig(env) {
   return require(`./build-utils/webpack.${env}`)(env);
@@ -39,7 +35,11 @@ module.exports = function(
           template: './public/index.html',
         }),
         new webpack.ProgressPlugin(),
-        new webpack.DefinePlugin(envKeys),
+        new webpack.DefinePlugin({
+          'process.env.MAPBOX_ACCESS_TOKEN': JSON.stringify(
+            process.env.MAPBOX_ACCESS_TOKEN,
+          ),
+        }),
       ],
     },
     modeConfig(mode),
