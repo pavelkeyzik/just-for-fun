@@ -8,10 +8,30 @@ import { NavigationMenu } from '../components/NavigationMenu';
 import { GradientLine } from '../components/GradientLine';
 import { Footer } from '../components/Footer';
 
-const Home = React.lazy(() => import('./main/Home'));
-const Places = React.lazy(() => import('./main/Places'));
-const Contributors = React.lazy(() => import('./main/Contributors'));
-const NotFound = React.lazy(() => import('./main/NotFound'));
+const Home = React.lazy(() =>
+  import(
+    /* webpackChunkName: "Home" */
+    './main/Home'
+  ),
+);
+const Places = React.lazy(() =>
+  import(
+    /* webpackChunkName: "Places" */
+    './main/Places'
+  ),
+);
+const Contributors = React.lazy(() =>
+  import(
+    /* webpackChunkName: "Contributors" */
+    './main/Contributors'
+  ),
+);
+const NotFound = React.lazy(() =>
+  import(
+    /* webpackChunkName: "NotFound" */
+    './main/NotFound'
+  ),
+);
 
 function Main(): JSX.Element {
   return (
