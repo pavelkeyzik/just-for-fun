@@ -1,9 +1,13 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = function() {
   return {
     devtool: 'source-map',
-    plugins: [new MiniCssExtractPlugin()],
+    plugins: [
+      new MiniCssExtractPlugin(),
+      new CopyPlugin([{ from: 'public', ignore: ['index.html'] }]),
+    ],
     module: {
       rules: [
         {
