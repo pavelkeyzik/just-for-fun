@@ -10,8 +10,18 @@ import './setup';
 
 import { PageLoader } from './components/PageLoader';
 
-const Main = React.lazy(() => import('./pages/Main'));
-const Admin = React.lazy(() => import('./pages/Admin'));
+const Main = React.lazy(() =>
+  import(
+    /* webpackChunkName: "Main" */
+    './pages/Main'
+  ),
+);
+const Admin = React.lazy(() =>
+  import(
+    /* webpackChunkName: "Admin" */
+    './pages/Admin'
+  ),
+);
 
 ReactDOM.render(
   <ApolloProvider client={client}>

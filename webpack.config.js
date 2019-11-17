@@ -19,7 +19,8 @@ module.exports = function(
       mode,
       output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js',
         publicPath: '/',
       },
       module: {

@@ -5,8 +5,18 @@ import { routes } from '../config';
 
 import { PageLoader } from '../components/PageLoader';
 
-const Login = React.lazy(() => import('./admin/Login'));
-const Dashboard = React.lazy(() => import('./admin/Dashboard'));
+const Login = React.lazy(() =>
+  import(
+    /* webpackChunkName: "Login" */
+    './admin/Login'
+  ),
+);
+const Dashboard = React.lazy(() =>
+  import(
+    /* webpackChunkName: "Dashboard" */
+    './admin/Dashboard'
+  ),
+);
 
 function Admin(): JSX.Element {
   const isAuthorized = localStorage.getItem('isAuthorized');
