@@ -51,6 +51,8 @@ describe('useAddPlaceForm hook', () => {
     const stateToCheck = reducer(state, action);
     const objectToCheck = {
       name: newValue,
+      lat: 0,
+      lng: 0,
     };
 
     expect(stateToCheck).toEqual(objectToCheck);
@@ -64,6 +66,8 @@ describe('useAddPlaceForm hook', () => {
     const stateToCheck = reducer(state, action);
     const objectToCheck = {
       address: newValue,
+      lat: 0,
+      lng: 0,
     };
 
     expect(stateToCheck).toEqual(objectToCheck);
@@ -77,6 +81,7 @@ describe('useAddPlaceForm hook', () => {
     const stateToCheck = reducer(state, action);
     const objectToCheck = {
       lat: newValue,
+      lng: 0,
     };
 
     expect(stateToCheck).toEqual(objectToCheck);
@@ -89,6 +94,7 @@ describe('useAddPlaceForm hook', () => {
 
     const stateToCheck = reducer(state, action);
     const objectToCheck = {
+      lat: 0,
       lng: newValue,
     };
 
