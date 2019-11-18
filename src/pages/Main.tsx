@@ -10,25 +10,25 @@ import { Footer } from '../components/Footer';
 
 const Home = React.lazy(() =>
   import(
-    /* webpackChunkName: "Home" */
+    /* webpackChunkName: "HomePage" */
     './main/Home'
   ),
 );
 const Places = React.lazy(() =>
   import(
-    /* webpackChunkName: "Places" */
+    /* webpackChunkName: "PlacesPage" */
     './main/Places'
   ),
 );
 const Contributors = React.lazy(() =>
   import(
-    /* webpackChunkName: "Contributors" */
+    /* webpackChunkName: "ContributorsPage" */
     './main/Contributors'
   ),
 );
 const NotFound = React.lazy(() =>
   import(
-    /* webpackChunkName: "NotFound" */
+    /* webpackChunkName: "NotFoundPage" */
     './main/NotFound'
   ),
 );

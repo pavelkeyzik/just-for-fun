@@ -12,13 +12,13 @@ import { PageLoader } from './components/PageLoader';
 
 const Main = React.lazy(() =>
   import(
-    /* webpackChunkName: "Main" */
+    /* webpackChunkName: "MainPage" */
     './pages/Main'
   ),
 );
 const Admin = React.lazy(() =>
   import(
-    /* webpackChunkName: "Admin" */
+    /* webpackChunkName: "AdminPage" */
     './pages/Admin'
   ),
 );
