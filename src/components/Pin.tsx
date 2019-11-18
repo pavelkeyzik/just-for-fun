@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReactComponent as PinIcon } from '../images/pin.svg';
+import PinIcon from '../images/pin.svg';
 
 import styles from './Pin.module.css';
 

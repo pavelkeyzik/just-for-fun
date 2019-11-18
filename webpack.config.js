@@ -27,7 +27,7 @@ module.exports = function(
         rules: [
           {
             test: /\.svg$/,
-            use: ['@svgr/webpack', 'url-loader'],
+            use: ['babel-loader', 'react-svg-loader'],
           },
         ],
       },

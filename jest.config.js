@@ -11,6 +11,6 @@ module.exports = {
   ],
   transform: {
     '\\.tsx?$': 'ts-jest',
-    '\\.svg?$': '<rootDir>/src/fileTransformer.js',
+    '\\.svg?$': 'jest-svg-transformer',
   },
 };
