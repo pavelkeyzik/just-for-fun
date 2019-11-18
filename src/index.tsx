@@ -9,6 +9,7 @@ import { client } from './utils/api';
 import './setup';
 
 import { PageLoader } from './components/PageLoader';
+import { registerServiceWorker } from './service-worker';
 
 const Main = React.lazy(() =>
   import(
@@ -36,3 +37,5 @@ ReactDOM.render(
   </ApolloProvider>,
   document.getElementById('root'),
 );
+
+registerServiceWorker();
