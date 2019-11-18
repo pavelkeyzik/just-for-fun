@@ -7,13 +7,13 @@ import { PageLoader } from '../components/PageLoader';
 
 const Login = React.lazy(() =>
   import(
-    /* webpackChunkName: "Login" */
+    /* webpackChunkName: "LoginPage" */
     './admin/Login'
   ),
 );
 const Dashboard = React.lazy(() =>
   import(
-    /* webpackChunkName: "Dashboard" */
+    /* webpackChunkName: "DashboardPage" */
     './admin/Dashboard'
   ),
 );
