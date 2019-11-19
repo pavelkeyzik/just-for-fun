@@ -1,12 +1,14 @@
 export function registerServiceWorker(): void {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .register('/public/sw.js')
-      .then(value => {
-        console.log('SW Registered', value);
-      })
-      .catch(err => {
-        console.log('Something went wrong', { err });
-      });
+    window.addEventListener('load', () => {
+      navigator.serviceWorker
+        .register('/service-worker.js')
+        .then(registration => {
+          console.log('SW registered: ', registration);
+        })
+        .catch(registrationError => {
+          console.log('SW registration failed: ', registrationError);
+        });
+    });
   }
 }
