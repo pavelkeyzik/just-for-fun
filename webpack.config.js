@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const presetConfig = require('./build-utils/load-presets');
 const dotenv = require('dotenv');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 dotenv.config();
 
@@ -40,6 +41,12 @@ module.exports = function(
           'process.env.MAPBOX_ACCESS_TOKEN': JSON.stringify(
             process.env.MAPBOX_ACCESS_TOKEN,
           ),
+        }),
+        new WorkboxPlugin.GenerateSW({
+          // these options encourage the ServiceWorkers to get in there fast
+          // and not allow any straggling "old" SWs to hang around
+          clientsClaim: true,
+          skipWaiting: true,
         }),
       ],
     },
