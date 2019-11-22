@@ -25,7 +25,7 @@
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server",
     "dev": "npm run webpack-dev-server -- --env.mode development --env.presets typescript",
-    "build": "npm run webpack -- --env.mode production --env.presets typescript",
+    "build": "npm run webpack -- --env.mode production --env.presets typescript,sw",
     "test": "jest",
     "lint": "eslint 'src/**/*.{js,ts,tsx}' --color",
     "storybook": "start-storybook"
