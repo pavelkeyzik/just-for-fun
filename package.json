@@ -27,11 +27,8 @@
     "dev": "npm run webpack-dev-server -- --env.mode development --env.presets typescript",
     "build": "npm run webpack -- --env.mode production --env.presets typescript,sw",
     "test": "jest",
-    "lint": "eslint 'src/**/*.{js,ts,tsx}' --color",
+    "lint": "tslint --project .",
     "storybook": "start-storybook"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -59,8 +56,6 @@
     "@types/react-map-gl": "5.0.2",
     "@types/react-router-dom": "5.1.0",
     "@types/reactstrap": "8.0.6",
-    "@typescript-eslint/eslint-plugin": "2.6.0",
-    "@typescript-eslint/parser": "2.6.0",
     "babel-jest": "24.9.0",
     "babel-loader": "8.0.6",
     "babel-plugin-dynamic-import-webpack": "1.1.0",
@@ -79,6 +74,9 @@
     "style-loader": "1.0.0",
     "ts-jest": "24.1.0",
     "ts-loader": "6.2.1",
+    "tslint": "5.20.1",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-react": "4.1.0",
     "url-loader": "2.2.0",
     "webpack": "4.41.2",
     "webpack-cli": "3.3.10",

@@ -1,32 +1,32 @@
 import { useReducer } from 'react';
 
-interface State {
+interface IState {
   name?: string;
   address?: string;
   lat: number;
   lng: number;
 }
 
-interface Action {
+interface IAction {
   type: string;
   payload: any;
 }
 
-interface Actions {
+interface IActions {
   SET_NAME: string;
   SET_ADDRESS: string;
   SET_LATITUDE: string;
   SET_LONGITUDE: string;
 }
 
-interface HookType extends State {
+interface IHookType extends IState {
   setName: (name: string) => void;
   setAddress: (address: string) => void;
   setLatitude: (latitude: number) => void;
   setLongitude: (longitude: number) => void;
 }
 
-export const actions: Actions = {
+export const actions: IActions = {
   SET_NAME: 'SET_NAME',
   SET_ADDRESS: 'SET_ADDRESS',
   SET_LATITUDE: 'SET_LATITUDE',
@@ -36,14 +36,14 @@ export const actions: Actions = {
 /**
  * Inital state for reducer
  */
-export const initialState: State = {
+export const initialState: IState = {
   name: '',
   address: '',
   lat: 0.0,
   lng: 0.0,
 };
 
-export function reducer(state: State, action: Action): State {
+export function reducer(state: IState, action: IAction): IState {
   switch (action.type) {
     case actions.SET_NAME:
       return {
@@ -73,7 +73,7 @@ export function reducer(state: State, action: Action): State {
 /**
  * Hook for `Add new place` form
  */
-export function useAddPlaceForm(defaultState?: State): HookType {
+export function useAddPlaceForm(defaultState?: IState): IHookType {
   const [state, dispatch] = useReducer(reducer, {
     ...initialState,
     ...defaultState,

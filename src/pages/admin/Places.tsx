@@ -7,10 +7,10 @@ import { routes } from '../../config';
 
 import styles from './Places.module.css';
 import { PageLoader } from '../../components/PageLoader';
-import { Place } from '../../types';
+import { IPlace } from '../../types';
 
-interface PlacesData {
-  places: Place[];
+interface IPlacesData {
+  places: IPlace[];
 }
 
 export const GET_PLACES = gql`
@@ -23,7 +23,7 @@ export const GET_PLACES = gql`
 `;
 
 export function Places(): JSX.Element {
-  const { data, loading } = useQuery<PlacesData>(GET_PLACES);
+  const { data, loading } = useQuery<IPlacesData>(GET_PLACES);
 
   if (loading) {
     return <PageLoader message="Places is loading" />;
@@ -37,7 +37,7 @@ export function Places(): JSX.Element {
       </div>
       <section className={styles.placesGrid}>
         {data &&
-          data.places.map((place: Place, index: number) => (
+          data.places.map((place: IPlace, index: number) => (
             <article key={index} className={styles.placeCard}>
               <h3 className={styles.placeCardTitle}>{place.title}</h3>
               <span>{place.address}</span>

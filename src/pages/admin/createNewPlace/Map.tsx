@@ -10,17 +10,17 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { mapBoxAPIAccessToken } from '../../../config';
 import { Pin } from '../../../components/Pin';
-import { Coordinates } from '../../../types';
+import { ICoordinates } from '../../../types';
 
-interface MapProps {
-  markerCoordinates: Coordinates;
-  onChangeMarkerPosition: (coordinates: Coordinates) => void;
+interface IMapProps {
+  markerCoordinates: ICoordinates;
+  onChangeMarkerPosition: (coordinates: ICoordinates) => void;
 }
 
 export function Map({
   markerCoordinates,
   onChangeMarkerPosition,
-}: MapProps): JSX.Element {
+}: IMapProps): JSX.Element {
   const defaultState: MapboxProps = {
     width: '100%',
     height: 400,

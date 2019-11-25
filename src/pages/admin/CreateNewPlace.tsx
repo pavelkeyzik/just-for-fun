@@ -11,10 +11,10 @@ import { defaultMarkerLat, defaultMarkerLng } from '../../config';
 
 import styles from './CreateNewPlace.module.css';
 import { AddNewPlaceSpinner } from './createNewPlace/AddNewPlaceSpinner';
-import { Coordinates, Place } from '../../types';
+import { ICoordinates, IPlace } from '../../types';
 
-interface NewPlaceData {
-  addNewPlace: Place;
+interface INewPlaceData {
+  addNewPlace: IPlace;
 }
 
 export const CREATE_NEW_PLACE = gql`
@@ -36,7 +36,7 @@ export const CREATE_NEW_PLACE = gql`
 `;
 
 function CreateNewPlace(): JSX.Element {
-  const [createNewPlace, { loading }] = useMutation<NewPlaceData, Place>(
+  const [createNewPlace, { loading }] = useMutation<INewPlaceData, IPlace>(
     CREATE_NEW_PLACE,
   );
   const {
@@ -58,9 +58,9 @@ function CreateNewPlace(): JSX.Element {
     createNewPlace({
       variables: {
         title: name,
-        address: address,
-        lat: lat,
-        lng: lng,
+        address,
+        lat,
+        lng,
       },
     });
   }
@@ -79,7 +79,7 @@ function CreateNewPlace(): JSX.Element {
     setAddress(value);
   }
 
-  function handleChangeMarkerPosition(coordinates: Coordinates): void {
+  function handleChangeMarkerPosition(coordinates: ICoordinates): void {
     setLatitude(coordinates.latitude);
     setLongitude(coordinates.longitude);
   }

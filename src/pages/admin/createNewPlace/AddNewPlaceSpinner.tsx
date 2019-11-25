@@ -3,13 +3,13 @@ import { Spinner } from 'reactstrap';
 
 import styles from './AddNewPlaceSpinner.module.css';
 
-interface AddNewPlaceSpinnerProps {
+interface IAddNewPlaceSpinnerProps {
   message?: string;
 }
 
 export function AddNewPlaceSpinner({
   message,
-}: AddNewPlaceSpinnerProps): JSX.Element {
+}: IAddNewPlaceSpinnerProps): JSX.Element {
   return (
     <div className={styles.container}>
       <Spinner type="grow" color="success" />

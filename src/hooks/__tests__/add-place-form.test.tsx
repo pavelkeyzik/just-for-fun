@@ -7,16 +7,16 @@ import {
   useAddPlaceForm,
 } from '../add-place-form';
 
-interface TestHookProps {
-  callback: Function;
+interface ITestHookProps {
+  callback: () => void;
 }
 
-function TestHook({ callback }: TestHookProps): null {
+function TestHook({ callback }: ITestHookProps): null {
   callback();
   return null;
 }
 
-function testHook(callback: Function): void {
+function testHook(callback: () => void): void {
   render(<TestHook callback={callback} />);
 }
 

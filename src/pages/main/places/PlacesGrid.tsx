@@ -5,10 +5,10 @@ import { Alert, Row, Col } from 'reactstrap';
 
 import { PlaceCard } from './placesGrid/PlaceCard';
 import { PageLoader } from '../../../components/PageLoader';
-import { Place } from '../../../types/index.js';
+import { IPlace } from '../../../types';
 
-interface PlacesData {
-  places: Place[];
+interface IPlacesData {
+  places: IPlace[];
 }
 
 export const GET_PLACES = gql`
@@ -23,7 +23,7 @@ export const GET_PLACES = gql`
 `;
 
 export function PlacesGrid(): JSX.Element {
-  const { data, error, loading } = useQuery<PlacesData>(GET_PLACES);
+  const { data, error, loading } = useQuery<IPlacesData>(GET_PLACES);
 
   if (error) {
     return <Alert color="danger">{error.message}</Alert>;
@@ -37,7 +37,7 @@ export function PlacesGrid(): JSX.Element {
     <section>
       <Row>
         {data &&
-          data.places.map((place: Place, index: number) => (
+          data.places.map((place: IPlace, index: number) => (
             <Col key={index} sm={{ size: '6' }}>
               <PlaceCard key={index} information={place} />
             </Col>

@@ -1,5 +1,5 @@
 import { placesData } from './__mocks__/places';
-import { Place } from '../types';
+import { IPlace } from '../types';
 
 async function mockedData<T>(data: T, time = 400): Promise<T> {
   return await new Promise(res => {
@@ -36,9 +36,9 @@ export const schema = `
 
 export const resolvers = {
   Query: {
-    places: async (): Promise<Place[]> => await mockedData(placesData),
+    places: async (): Promise<IPlace[]> => await mockedData(placesData),
   },
   Mutation: {
-    newPlace: async (): Promise<Place> => await mockedData(placesData[0]),
+    newPlace: async (): Promise<IPlace> => await mockedData(placesData[0]),
   },
 };
