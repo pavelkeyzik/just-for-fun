@@ -9,7 +9,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 1. Fork repository
 2. Download forked repository to your local machine
 3. Install all dependencies with `npm install`
-4. Run `npm start`
+4. Run `npm run dev`
 5. Create new branch [your_name]/feature-name (Ex, pavelkeyzik/add-tests-for-custom-hook)
 6. Write your code. More fun here...
 7. Make sure that you don't have any problem in your code. Run `npm test` and `npm run lint` commands.
