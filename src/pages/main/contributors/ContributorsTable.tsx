@@ -1,9 +1,38 @@
 import React from 'react';
-import { Table } from 'reactstrap';
+import gql from 'graphql-tag';
+import { Table, Alert } from 'reactstrap';
+import { useQuery } from '@apollo/react-hooks';
 
 import styles from './ContributorsTable.module.css';
+import { PageLoader } from '../../../components/PageLoader';
+import { IContributor } from '../../../types';
+
+const GET_CONTRIBUTORS = gql`
+  query getContributors {
+    contributors {
+      id
+      name
+      github
+    }
+  }
+`;
+
+interface IContributorsData {
+  contributors: IContributor[];
+}
 
 export function ContributorsTable(): JSX.Element {
+  const { data, loading, error } = useQuery<IContributorsData>(
+    GET_CONTRIBUTORS,
+  );
+
+  if (loading) {
+    return <PageLoader message="Contributors is loading" />;
+  }
+
+  if (error) {
+    return <Alert color="danger">{error.message}</Alert>;
+  }
   return (
     <Table className={styles.table}>
       <thead>
@@ -14,63 +43,16 @@ export function ContributorsTable(): JSX.Element {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>pavelkeyzik</td>
-          <td>
-            <a href="https://github.com/pavelkeyzik">
-              https://github.com/pavelkeyzik
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Eagle732</td>
-          <td>
-            <a href="https://github.com/Eagle732">
-              https://github.com/Eagle732
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>arturoalviar</td>
-          <td>
-            <a href="https://github.com/arturoalviar">
-              https://github.com/arturoalviar
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td>albertmolodec</td>
-          <td>
-            <a href="https://github.com/albertmolodec">
-              https://github.com/albertmolodec
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">5</th>
-          <td>fllprbt</td>
-          <td>
-            <a href="https://github.com/fllprbt">https://github.com/fllprbt</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">6</th>
-          <td>xit4</td>
-          <td>
-            <a href="https://github.com/xit4">https://github.com/xit4</a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">7</th>
-          <td>MAYTESI</td>
-          <td>
-            <a href="https://github.com/MAYTESI">https://github.com/MAYTESI</a>
-          </td>
-        </tr>
+        {data &&
+          data.contributors.map(contributor => (
+            <tr key={contributor.id}>
+              <th scope="row">{contributor.id}</th>
+              <td>{contributor.name}</td>
+              <td>
+                <a href={contributor.github}>{contributor.github}</a>
+              </td>
+            </tr>
+          ))}
       </tbody>
     </Table>
   );

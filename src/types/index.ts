@@ -9,3 +9,9 @@ export interface ICoordinates {
   latitude: number;
   longitude: number;
 }
+
+export interface IContributor {
+  id: number;
+  name: string;
+  github: string;
+}
