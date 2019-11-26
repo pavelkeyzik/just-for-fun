@@ -15,3 +15,10 @@ export interface IContributor {
   name: string;
   github: string;
 }
+
+export interface IEvent {
+  id: number;
+  title: string;
+  placeId: string;
+  place: IPlace;
+}

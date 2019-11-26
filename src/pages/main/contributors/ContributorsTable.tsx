@@ -33,6 +33,7 @@ export function ContributorsTable(): JSX.Element {
   if (error) {
     return <Alert color="danger">{error.message}</Alert>;
   }
+
   return (
     <Table className={styles.table}>
       <thead>

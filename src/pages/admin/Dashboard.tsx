@@ -13,6 +13,7 @@ import { routes } from '../../config';
 
 import { Places } from './Places';
 import CreateNewPlace from './CreateNewPlace';
+import { Events } from './Events';
 
 function Dashboard(): JSX.Element {
   return (
@@ -37,11 +38,7 @@ function Dashboard(): JSX.Element {
                   path={routes.admin.createNewPlace}
                   component={CreateNewPlace}
                 />
-                <Route
-                  exact
-                  path={routes.admin.events}
-                  component={(): JSX.Element => <div>Events content</div>}
-                />
+                <Route exact path={routes.admin.events} component={Events} />
                 <Route
                   component={(): JSX.Element => <div>Nothing found here</div>}
                 />
