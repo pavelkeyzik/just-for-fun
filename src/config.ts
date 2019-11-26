@@ -1,8 +1,8 @@
 export const isProduction = process.env.NODE_ENV === 'production';
 
 export const apiBase = isProduction
-  ? 'https://just-for-fun-server.herokuapp.com/'
-  : 'http://localhost:3500/';
+  ? 'https://nestjs-just-for-fun-server.herokuapp.com/graphql'
+  : 'http://localhost:3500/graphql';
 
 export const projectRepository = 'https://github.com/pavelkeyzik/just-for-fun';
 export const projectName = 'JUSTFORFUN';

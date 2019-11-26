@@ -46,8 +46,6 @@ MAPBOX_ACCESS_TOKEN="...your_access_token..."
 │   ├── styles.css         # Global styles
 │   ├── types/             # Global types and interfaces
 │   └── utils/
-│       ├── __mocks__/
 │       ├── api.ts         # Apollo-client configuration
-│       └── schema.ts      # Mocked schema of GraphQL
 └── tsconfig.json          # Config for TypeScript
 ```

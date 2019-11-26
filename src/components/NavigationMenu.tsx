@@ -21,6 +21,11 @@ export function NavigationMenu(): JSX.Element {
         </NavbarBrand>
         <Nav className={styles.menu}>
           <NavItem>
+            <NavLink tag={Link} to={routes.places}>
+              Places
+            </NavLink>
+          </NavItem>
+          <NavItem>
             <NavLink tag={Link} to={routes.contributors}>
               Contributors
             </NavLink>
