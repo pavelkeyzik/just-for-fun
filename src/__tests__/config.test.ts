@@ -25,7 +25,7 @@ describe('Configuration file', () => {
   });
 
   test('check api base url', () => {
-    expect(apiBase).toEqual('http://localhost:3500/');
+    expect(apiBase).toEqual('http://localhost:3500/graphql');
   });
 
   test('check project repository url', () => {
