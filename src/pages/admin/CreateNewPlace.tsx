@@ -12,6 +12,7 @@ import { defaultMarkerLat, defaultMarkerLng } from '../../config';
 import styles from './CreateNewPlace.module.css';
 import { AddNewPlaceSpinner } from './createNewPlace/AddNewPlaceSpinner';
 import { ICoordinates, IPlace } from '../../types';
+import { UncontrolledAlert } from 'reactstrap';
 
 interface INewPlaceData {
   addNewPlace: IPlace;
@@ -24,9 +25,7 @@ export const CREATE_NEW_PLACE = gql`
     $lat: Float!
     $lng: Float!
   ) {
-    newPlace(
-      input: { title: $title, address: $address, lat: $lat, lng: $lng }
-    ) {
+    createPlace(title: $title, address: $address, lat: $lat, lng: $lng) {
       title
       address
       lat
@@ -36,9 +35,11 @@ export const CREATE_NEW_PLACE = gql`
 `;
 
 function CreateNewPlace(): JSX.Element {
-  const [createNewPlace, { loading }] = useMutation<INewPlaceData, IPlace>(
-    CREATE_NEW_PLACE,
-  );
+  const [createNewPlace, { loading, error }] = useMutation<
+    INewPlaceData,
+    IPlace
+  >(CREATE_NEW_PLACE);
+
   const {
     name,
     address,
@@ -111,6 +112,11 @@ function CreateNewPlace(): JSX.Element {
             required
           />
           <Button type="submit">Save place</Button>
+          {error && (
+            <UncontrolledAlert color="danger">
+              {error.message}
+            </UncontrolledAlert>
+          )}
         </form>
         <Map
           markerCoordinates={{ latitude: lat, longitude: lng }}

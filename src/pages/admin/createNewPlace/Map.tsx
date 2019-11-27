@@ -23,7 +23,7 @@ export function Map({
 }: IMapProps): JSX.Element {
   const defaultState: MapboxProps = {
     width: '100%',
-    height: 400,
+    height: 500,
     latitude: 53.8885,
     longitude: 27.545068,
     zoom: 11,

@@ -22,7 +22,7 @@ function Dashboard(): JSX.Element {
         <Col xl="2" className={styles.column}>
           <NavMenu />
         </Col>
-        <Col xl="7" className={styles.column}>
+        <Col xl="10" className={styles.column}>
           <ActionsPanel />
           <main className={styles.main}>
             <Suspense fallback={<PageLoader message="Content is loading" />}>
@@ -45,9 +45,6 @@ function Dashboard(): JSX.Element {
               </Switch>
             </Suspense>
           </main>
-        </Col>
-        <Col xl="3" className={styles.column}>
-          <SideBar />
         </Col>
       </Row>
     </Container>
