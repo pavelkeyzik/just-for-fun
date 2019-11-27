@@ -19,7 +19,7 @@ const Dashboard = React.lazy(() =>
 );
 
 function Admin(): JSX.Element {
-  const isAuthorized = localStorage.getItem('isAuthorized');
+  const isAuthorized = localStorage.getItem('token');
 
   return (
     <Suspense fallback={<PageLoader message="Admin panel is loading..." />}>

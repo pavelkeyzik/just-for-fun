@@ -22,3 +22,12 @@ export interface IEvent {
   placeId: string;
   place: IPlace;
 }
+
+export interface IAuthInformationRequest {
+  token: string;
+}
+
+export interface ISignInInformation {
+  username: string;
+  password: string;
+}
