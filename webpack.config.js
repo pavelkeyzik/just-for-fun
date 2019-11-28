@@ -11,6 +11,20 @@ function modeConfig(env) {
   return require(`./build-utils/webpack.${env}`)(env);
 }
 
+function getEnvironmentVariables() {
+  const defineObject = {};
+  const environmentVariables = process.env;
+
+  Object.keys(environmentVariables).forEach(
+    key =>
+      (defineObject[`process.env.${key}`] = JSON.stringify(
+        environmentVariables[key],
+      )),
+  );
+
+  return defineObject;
+}
+
 module.exports = function(
   { mode, presets } = { mode: 'production', presets: [] },
 ) {
@@ -36,11 +50,7 @@ module.exports = function(
           template: './public/index.html',
         }),
         new webpack.ProgressPlugin(),
-        new webpack.DefinePlugin({
-          'process.env.MAPBOX_ACCESS_TOKEN': JSON.stringify(
-            process.env.MAPBOX_ACCESS_TOKEN,
-          ),
-        }),
+        new webpack.DefinePlugin(getEnvironmentVariables()),
       ],
     },
     modeConfig(mode),
