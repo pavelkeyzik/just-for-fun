@@ -21,3 +21,6 @@ jobs:
     - run:
         name: Unit testing
         command: npm t
+    - run:
+        name: Try to build application
+        command: npm run build
