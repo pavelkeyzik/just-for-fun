@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 
 import { routes } from './config';
-import { client } from './utils/api';
+import { client } from './client';
 
 import './setup';
 
