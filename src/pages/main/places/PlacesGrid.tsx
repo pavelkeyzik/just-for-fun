@@ -12,7 +12,7 @@ interface IPlacesData {
 }
 
 export const GET_PLACES = gql`
-  query getPlaces {
+  query GetPlaces {
     places {
       title
       address

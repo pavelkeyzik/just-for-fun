@@ -19,7 +19,7 @@ interface INewPlaceData {
 }
 
 export const CREATE_NEW_PLACE = gql`
-  mutation addNewPlace(
+  mutation AddNewPlace(
     $title: String!
     $address: String!
     $lat: Float!
