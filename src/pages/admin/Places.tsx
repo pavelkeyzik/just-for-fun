@@ -9,7 +9,7 @@ import styles from './Places.module.css';
 import { PageLoader } from '../../components/PageLoader';
 import { IPlace } from '../../types';
 
-interface IPlacesData {
+export interface IPlacesData {
   places: IPlace[];
 }
 
@@ -18,6 +18,8 @@ export const GET_PLACES = gql`
     places {
       title
       address
+      lat
+      lng
     }
   }
 `;
