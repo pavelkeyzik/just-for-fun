@@ -8,7 +8,7 @@ import { IAuthInformationRequest, ISignInInformation } from '../../../types';
 import { useSignInForm } from '../../../hooks/sign-in-form';
 
 export const SIGN_IN = gql`
-  mutation signIn($username: String!, $password: String!) {
+  mutation SignIn($username: String!, $password: String!) {
     signIn(username: $username, password: $password) {
       token
     }

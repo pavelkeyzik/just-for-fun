@@ -14,7 +14,7 @@ interface IPlacesData {
 }
 
 export const GET_PLACES = gql`
-  query {
+  query GetPlacesInAdminPanel {
     places {
       title
       address

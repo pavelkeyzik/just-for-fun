@@ -8,7 +8,7 @@ import { PageLoader } from '../../../components/PageLoader';
 import { IContributor } from '../../../types';
 
 const GET_CONTRIBUTORS = gql`
-  query getContributors {
+  query GetContributors {
     contributors {
       id
       name

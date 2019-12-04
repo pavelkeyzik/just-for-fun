@@ -10,7 +10,7 @@ interface IEventsData {
 }
 
 const GET_EVENTS = gql`
-  query getEvents {
+  query GetEventsInAdminPanel {
     events {
       id
       title
