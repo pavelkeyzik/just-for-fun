@@ -13,9 +13,10 @@ import styles from './CreateNewPlace.module.css';
 import { AddNewPlaceSpinner } from './createNewPlace/AddNewPlaceSpinner';
 import { ICoordinates, IPlace } from '../../types';
 import { UncontrolledAlert } from 'reactstrap';
+import { GET_PLACES, IPlacesData } from './Places';
 
 interface INewPlaceData {
-  addNewPlace: IPlace;
+  createPlace: IPlace;
 }
 
 export const CREATE_NEW_PLACE = gql`
@@ -35,10 +36,25 @@ export const CREATE_NEW_PLACE = gql`
 `;
 
 function CreateNewPlace(): JSX.Element {
-  const [createNewPlace, { loading, error }] = useMutation<
+  const [createNewPlace, newPlace] = useMutation<
     INewPlaceData,
     IPlace
-  >(CREATE_NEW_PLACE);
+  >(CREATE_NEW_PLACE, {
+    update(cache, { data }) {
+      const queryData = cache.readQuery<IPlacesData>({ query: GET_PLACES });
+      const createdPlace = data && data.createPlace;
+      const places = queryData && queryData.places
+
+      if (createdPlace && places) {
+        cache.writeQuery({
+          query: GET_PLACES,
+          data: {
+            places: [...places, createdPlace],
+          }
+        })
+      }
+    }
+  });
 
   const {
     name,
@@ -91,7 +107,7 @@ function CreateNewPlace(): JSX.Element {
         <h2>Create new place</h2>
       </div>
       <section className={styles.pageGrid}>
-        {loading && (
+        {newPlace.loading && (
           <AddNewPlaceSpinner message="Adding a new place to the database..." />
         )}
         <form className={styles.formGrid} onSubmit={handleAddNewPlace}>
@@ -112,9 +128,9 @@ function CreateNewPlace(): JSX.Element {
             required
           />
           <Button type="submit">Save place</Button>
-          {error && (
+          {newPlace.error && (
             <UncontrolledAlert color="danger">
-              {error.message}
+              {newPlace.error.message}
             </UncontrolledAlert>
           )}
         </form>
