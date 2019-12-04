@@ -20,7 +20,7 @@ interface IAuthInformation {
 }
 
 function LoginForm({ history }: RouteComponentProps): JSX.Element {
-  const [signIn, { loading, error, data }] = useMutation<
+  const [signIn, userAuthInfo] = useMutation<
     IAuthInformation,
     ISignInInformation
   >(SIGN_IN);
@@ -73,8 +73,8 @@ function LoginForm({ history }: RouteComponentProps): JSX.Element {
           name="password"
         />
       </FormGroup>
-      <Button color="primary" disabled={loading}>
-        {loading ? 'Wait...' : 'Log In'}
+      <Button color="primary" disabled={userAuthInfo.loading}>
+        {userAuthInfo.loading ? 'Wait...' : 'Log In'}
       </Button>
     </Form>
   );
